@@ -4,7 +4,7 @@ export interface ThrottlerStorageRedis {
   /**
    * The redis instance.
    */
-  storage: Redis.Redis;
+  redis: Redis.Redis;
 
   /**
    * Get a record via its key and return all its request ttls.
