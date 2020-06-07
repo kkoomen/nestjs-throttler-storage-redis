@@ -36,3 +36,9 @@ lerna-debug.log*
 # VIM
 *.swp
 *.swo
+
+# Packaging
+*.tgz
+*.zip
+*.tar.gz
+/package/

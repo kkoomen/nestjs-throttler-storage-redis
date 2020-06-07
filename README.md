@@ -2,6 +2,16 @@
 
 Redis storage provider for the [nestjs-throttler](nestjs-throttler) package.
 
+# Installation
+
+### Yarn
+
+- `yarn add nestjs-throttler nestjs-throttler-storage-redis ioredis`
+
+### NPM
+
+- `npm install --save nestjs-throttler nestjs-throttler-storage-redis ioredis`
+
 # Usage
 
 ```ts

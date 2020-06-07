@@ -6,6 +6,7 @@ import { AppService } from '../app.service';
 @Controller('limit')
 export class LimitController {
   constructor(private readonly appService: AppService) {}
+
   @Get()
   getThrottled() {
     return this.appService.success();
