@@ -1,6 +1,6 @@
 {
   "name": "nestjs-throttler-storage-redis",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Redis storage provider for the nestjs-throttler package",
   "author": "",
   "keywords": [
