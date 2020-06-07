@@ -36,10 +36,8 @@ Bugs and features related to the redis implementation are welcome in this
 repository.
 
 For any issues related to the nestjs-throttler, please submit an issue at the
-[nestjs-throttler](nestjs-throttler) repository.
+[nestjs-throttler](https://github.com/jmcdo29/nestjs-throttler) repository.
 
 # License
 
 NestJS Throttler Redis Storage is licensed under the MIT license.
-
-[nestjs-throttler]: https://github.com/jmcdo29/nestjs-throttler
