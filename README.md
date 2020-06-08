@@ -21,9 +21,29 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 @Module({
   imports: [
     ThrottlerModule.forRoot({
-      limit: 5,
       ttl: 60,
+      limit: 5,
       storage: new ThrottlerStorageRedisService(),
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+```ts
+import { ThrottlerModule } from 'nestjs-throttler';
+import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
+
+@Module({
+  imports: [
+    ThrottlerModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        ttl: config.get('THROTTLE_TTL'),
+        limit: config.get('THROTTLE_LIMIT'),
+        storage: new ThrottlerStorageRedisService(),
+      }),
     }),
   ],
 })
