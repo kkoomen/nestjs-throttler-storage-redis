@@ -1,18 +1,15 @@
 import { Module } from '@nestjs/common';
-import { ThrottlerModule } from 'nestjs-throttler';
-import { ThrottlerStorageRedisService } from '../../src';
-import { AppService } from './app.service';
+import { APP_GUARD } from '@nestjs/core';
+import { ThrottlerGuard } from 'nestjs-throttler';
 import { ControllerModule } from './controllers/controller.module';
 
 @Module({
-  imports: [
-    ThrottlerModule.forRoot({
-      limit: 5,
-      ttl: 60,
-      storage: new ThrottlerStorageRedisService(),
-    }),
-    ControllerModule,
+  imports: [ControllerModule],
+  providers: [
+    {
+      provide: APP_GUARD,
+      useClass: ThrottlerGuard,
+    },
   ],
-  providers: [AppService],
 })
 export class AppModule {}
