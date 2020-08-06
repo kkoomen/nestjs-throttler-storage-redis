@@ -64,7 +64,7 @@
     "lint-staged": "^10.2.9",
     "nestjs-throttler": "^0.2.1",
     "nodemon": "^2.0.4",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.5",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^6.5.4",
