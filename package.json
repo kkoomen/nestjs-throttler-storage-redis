@@ -62,7 +62,7 @@
     "ioredis": "^4.17.3",
     "jest": "^25.1.0",
     "lint-staged": "^10.2.9",
-    "nestjs-throttler": "^0.2.1",
+    "nestjs-throttler": "^0.3.0",
     "nodemon": "^2.0.4",
     "prettier": "^2.0.5",
     "reflect-metadata": "^0.1.13",
@@ -79,7 +79,7 @@
     "@nestjs/common": "^7.0.0",
     "@nestjs/core": "^7.0.0",
     "ioredis": "^4.17.3",
-    "nestjs-throttler": "^0.2.1",
+    "nestjs-throttler": "^0.3.0",
     "reflect-metadata": "^0.1.13"
   },
   "jest": {
