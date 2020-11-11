@@ -6303,10 +6303,10 @@ neo-async@^2.5.0, neo-async@^2.6.0, neo-async@^2.6.1:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.1.tgz#ac27ada66167fa8849a6addd837f6b189ad2081c"
   integrity sha512-iyam8fBuCUpWeKPGpaNMetEocMt364qkCsfL9JuhjXX6dRnguRVOfk2GZaDpPjcOKiiXCPINZC1GczQ7iTq3Zw==
 
-nestjs-throttler@^0.2.1:
-  version "0.2.3"
-  resolved "https://registry.yarnpkg.com/nestjs-throttler/-/nestjs-throttler-0.2.3.tgz#0a2a5d8dee2c8f0dd573bb9bcd635466ffcb0158"
-  integrity sha512-Qn//YlCOdKwaFnleppeaHDFLTZtaTpuZFXPKH6mHYQz1pof0tCckoHlyvdwFJuuZX1muLQgkviTrhtE6DgMusQ==
+nestjs-throttler@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/nestjs-throttler/-/nestjs-throttler-0.3.0.tgz#5322d0fc26ce51f05862923ccce60dcf9796c563"
+  integrity sha512-zJPYdBS98eDCXKbzyboMXp0hYW6c5519kRPmwTAY09oDngy2XEtaI/RCtw0D1pbUFGv08pYJiQ26pz6YT22Ong==
   dependencies:
     md5 "^2.2.1"
 
