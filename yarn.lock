@@ -740,14 +740,14 @@
     tslib "2.0.3"
 
 "@nestjs/platform-fastify@^7.1.1":
-  version "7.6.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.2.tgz#288a726dc5ca50b8abd5218255852fab8d0e44a0"
-  integrity sha512-a+z+Gh8H6KT6ma4Y8SfrztIopC/0Vkz1vcPGzo3AgesPMOGdS5V60RnwFvYg5iTq4cBYdiu0Ut2EH0PRjdns/A==
+  version "7.6.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.3.tgz#18ff3eaba2c43bacf66d7f265763759a7afa065a"
+  integrity sha512-ZzMdc6LfS4XI/2+rCLjPFvyztJ1wGv0XWLnStzQabuQ7/nyWoFCy5a70jlexxkYJsCX9QRZ6RYCmnB53Bbr+xA==
   dependencies:
     fastify "3.9.2"
     fastify-cors "5.1.0"
     fastify-formbody "5.0.0"
-    light-my-request "4.3.0"
+    light-my-request "4.4.1"
     middie "5.2.0"
     path-to-regexp "3.2.0"
     tslib "2.0.3"
@@ -5195,10 +5195,10 @@ levn@^0.3.0, levn@~0.3.0:
     prelude-ls "~1.1.2"
     type-check "~0.3.2"
 
-light-my-request@4.3.0, light-my-request@^4.2.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/light-my-request/-/light-my-request-4.3.0.tgz#0178dfe7f298089df976f8e4cc0e10998be50aad"
-  integrity sha512-WrEvI7V41ZbEUe0bsfuS170QrYSVADKA0JiWyK/lVtm4Ra26pl9CYKBdlr823/s37N2wMJze8YNkHbg11aZWAw==
+light-my-request@4.4.1, light-my-request@^4.2.0:
+  version "4.4.1"
+  resolved "https://registry.yarnpkg.com/light-my-request/-/light-my-request-4.4.1.tgz#bfa2220316eef4f6465bf2f0667780da6b7f6a71"
+  integrity sha512-FDNRF2mYjthIRWE7O8d/X7AzDx4otQHl4/QXbu3Q/FRwBFcgb+ZoDaUd5HwN53uQXLAiw76osN+Va0NEaOW6rQ==
   dependencies:
     ajv "^6.12.2"
     cookie "^0.4.0"
