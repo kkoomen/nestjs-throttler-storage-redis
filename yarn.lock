@@ -740,9 +740,9 @@
     tslib "2.1.0"
 
 "@nestjs/platform-fastify@^7.1.1":
-  version "7.6.6"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.6.tgz#e3bc5dd7711402a676fb7bafd573913235ec8d61"
-  integrity sha512-x/WVmACu+PyRWUtXBGLZ1B40M2tITa+ztjoTH6xf+oSHXeOe22Jj2R93nbpQufv9x94t/mv78j5I9+yelWVCZQ==
+  version "7.6.7"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.7.tgz#040c318614670d3931f4bb1cde1bee9a13972944"
+  integrity sha512-f1aUZeug4Or7YP1KWwP28xXabVMureQ8KZQv2/4PPXMmHRz4X+LGQUMKU8ZR9B4zlOyjYhj8gSgIUGVcrRx+BA==
   dependencies:
     fastify "3.11.0"
     fastify-cors "5.2.0"
@@ -8022,11 +8022,6 @@ tsconfig-paths@3.9.0, tsconfig-paths@^3.4.0, tsconfig-paths@^3.9.0:
     json5 "^1.0.1"
     minimist "^1.2.0"
     strip-bom "^3.0.0"
-
-tslib@2.0.3:
-  version "2.0.3"
-  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.0.3.tgz#8e0741ac45fc0c226e58a17bfc3e64b9bc6ca61c"
-  integrity sha512-uZtkfKblCEQtZKBF6EBXVZeQNl82yqtDQdv+eck8u7tdPxjLu2/lp5/uPW+um2tpuxINHWy3GhiccY7QgEaVHQ==
 
 tslib@2.1.0:
   version "2.1.0"
