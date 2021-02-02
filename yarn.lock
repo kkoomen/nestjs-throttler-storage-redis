@@ -740,9 +740,9 @@
     tslib "2.1.0"
 
 "@nestjs/platform-fastify@^7.1.1":
-  version "7.6.7"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.7.tgz#040c318614670d3931f4bb1cde1bee9a13972944"
-  integrity sha512-f1aUZeug4Or7YP1KWwP28xXabVMureQ8KZQv2/4PPXMmHRz4X+LGQUMKU8ZR9B4zlOyjYhj8gSgIUGVcrRx+BA==
+  version "7.6.8"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-7.6.8.tgz#4174cbd539e8d7a3c740192e9804ef33548c0f0c"
+  integrity sha512-nXOGvcJ+/0J+n558nkWHuMi49Ns2UKkYJFumTYAL8sQ3TBkvrdd6Iay62KFV59Qtpz6c9rj/t+TPlvNRxfzmew==
   dependencies:
     fastify "3.11.0"
     fastify-cors "5.2.0"
