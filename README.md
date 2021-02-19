@@ -16,6 +16,7 @@ Redis storage provider for the [nestjs-throttler](nestjs-throttler) package.
 
 ```ts
 import { ThrottlerModule } from 'nestjs-throttler';
+import * as Redis from 'ioredis';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 
 @Module({
@@ -42,7 +43,9 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
       useFactory: (config: ConfigService) => ({
         ttl: config.get('THROTTLE_TTL'),
         limit: config.get('THROTTLE_LIMIT'),
-        storage: new ThrottlerStorageRedisService(),
+        storage: new ThrottlerStorageRedisService(<Redis.Redis>client),
+        // storage: ThrottlerStorageRedisService.create(),
+        // storage: ThrottlerStorageRedisService.create(<Redis.RedisOptions>options),
       }),
     }),
   ],
