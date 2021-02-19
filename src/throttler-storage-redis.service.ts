@@ -4,11 +4,7 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
 @Injectable()
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
-  redis: Redis.Redis;
-
-  constructor(options?: Redis.RedisOptions) {
-    this.redis = new Redis(options);
-  }
+  constructor(private redis: Redis.Redis) {}
 
   async getRecord(key: string): Promise<number[]> {
     const ttls = (await this.redis.scan(0, 'MATCH', `${key}:*`)).pop();
@@ -17,5 +13,9 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
 
   async addRecord(key: string, ttl: number): Promise<void> {
     this.redis.set(`${key}:${Date.now() + ttl * 1000}`, ttl, 'EX', ttl);
+  }
+  
+  static create(options?: Redis.RedisOptions) {
+    return new this(new Redis(options));
   }
 }
