@@ -24,7 +24,9 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
     ThrottlerModule.forRoot({
       ttl: 60,
       limit: 5,
-      storage: new ThrottlerStorageRedisService(),
+      storage: new ThrottlerStorageRedisService(<Redis.Redis>client),
+      // storage: ThrottlerStorageRedisService.create(),
+      // storage: ThrottlerStorageRedisService.create(<Redis.RedisOptions>options),
     }),
   ],
 })
