@@ -2,9 +2,11 @@ import { Module } from '@nestjs/common';
 import { APP_GUARD } from '@nestjs/core';
 import { ThrottlerGuard } from 'nestjs-throttler';
 import { ControllerModule } from './controllers/controller.module';
+import { GatewayModule } from './gateways/gateway.module';
+import { ResolverModule } from './resolvers/resolver.module';
 
 @Module({
-  imports: [ControllerModule],
+  imports: [ControllerModule, GatewayModule, ResolverModule],
   providers: [
     {
       provide: APP_GUARD,
