@@ -1,3 +1,9 @@
+## [0.1.7](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.5...v0.1.7) (2021-02-22)
+
+### Bug Fixes
+
+- adjust addRecord to set the expiry time correctly ([5498181](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/5498181a3818007803495fbd7b3921123732e0d4))
+
 ## [0.1.6](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.5...v0.1.6) (2020-06-10)
 
 ### Bug Fixes
