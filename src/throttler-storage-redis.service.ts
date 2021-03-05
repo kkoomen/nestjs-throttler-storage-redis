@@ -6,8 +6,14 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
   redis: Redis.Redis;
 
-  constructor(options?: Redis.RedisOptions) {
-    this.redis = new Redis(options);
+  constructor(redis?: Redis.Redis);
+  constructor(options?: Redis.RedisOptions);
+  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions) {
+    if (redisOrOptions instanceof Redis) {
+      this.redis = redisOrOptions;
+    } else {
+      this.redis = new Redis(redisOrOptions);
+    }
   }
 
   async getRecord(key: string): Promise<number[]> {
@@ -16,6 +22,6 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
   }
 
   async addRecord(key: string, ttl: number): Promise<void> {
-    this.redis.set(`${key}:${Date.now() + ttl * 1000}`, ttl, 'EX', ttl);
+    await this.redis.set(`${key}:${Date.now() + ttl * 1000}`, ttl, 'EX', ttl);
   }
 }
