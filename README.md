@@ -1,5 +1,7 @@
 # NestJS Throttler Redis Storage
 
+![Tests status](https://img.shields.io/github/workflow/status/kkoomen/nestjs-throttler-storage-redis/Tests/master)
+
 Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/throttler) package.
 
 # Installation
