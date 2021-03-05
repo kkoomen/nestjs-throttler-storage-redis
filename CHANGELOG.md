@@ -1,3 +1,15 @@
+## [0.1.8](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.6...v0.1.8) (2021-03-05)
+
+### Features
+
+- replace nestjs-throttler with @nestjs/throttler package ([4184f61](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4184f61d3c15c922e60312befbb2ead8c6270f64))
+
+## [0.1.7](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.6...v0.1.7) (2021-03-05)
+
+### Features
+
+- replace nestjs-throttler with @nestjs/throttler package ([4184f61](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4184f61d3c15c922e60312befbb2ead8c6270f64))
+
 ## [0.1.6](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.5...v0.1.6) (2020-06-10)
 
 ### Bug Fixes
