@@ -1,3 +1,16 @@
+## [0.1.9](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.7...v0.1.9) (2021-03-05)
+
+### Bug Fixes
+
+- use correct redis storage service ([e59c4ad](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/e59c4ade0bca2d3ff7d1f805460ce9e15eab6780))
+- use redis utility and close connection properly to prevent tests being stuck ([4d6456e](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4d6456ebd765137b1044f9b2e6a09d5231312daa))
+- **workflow:** do the checkout first before other cmds ([4e26c0d](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4e26c0dddaf324a173506e00a969d0a8146ba95a))
+
+### Features
+
+- implement docker-compose and adjust tests workflow to use docker ([427e811](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/427e811905be55f9e46f4502d2e037f4702aa57a))
+- replace nestjs-throttler with @nestjs/throttler package ([4184f61](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4184f61d3c15c922e60312befbb2ead8c6270f64))
+
 ## [0.1.8](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.6...v0.1.8) (2021-03-05)
 
 ### Features
