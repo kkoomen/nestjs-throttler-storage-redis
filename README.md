@@ -1,22 +1,22 @@
 # NestJS Throttler Redis Storage
 
-Redis storage provider for the [nestjs-throttler](nestjs-throttler) package.
+Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/throttler) package.
 
 # Installation
 
 ### Yarn
 
-- `yarn add nestjs-throttler nestjs-throttler-storage-redis ioredis`
+- `yarn add nestjs-throttler-storage-redis ioredis`
 
 ### NPM
 
-- `npm install --save nestjs-throttler nestjs-throttler-storage-redis ioredis`
+- `npm install --save nestjs-throttler-storage-redis ioredis`
 
 # Usage
 
 ```ts
-import { ThrottlerModule } from 'nestjs-throttler';
-import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
+import { ThrottlerModule } from '';
+import { ThrottlerStorageRedisService } from '-storage-redis';
 
 @Module({
   imports: [
@@ -31,8 +31,8 @@ export class AppModule {}
 ```
 
 ```ts
-import { ThrottlerModule } from 'nestjs-throttler';
-import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
+import { ThrottlerModule } from '';
+import { ThrottlerStorageRedisService } from '-storage-redis';
 
 @Module({
   imports: [
@@ -54,9 +54,6 @@ export class AppModule {}
 
 Bugs and features related to the redis implementation are welcome in this
 repository.
-
-For any issues related to the nestjs-throttler, please submit an issue at the
-[nestjs-throttler](https://github.com/jmcdo29/nestjs-throttler) repository.
 
 # License
 
