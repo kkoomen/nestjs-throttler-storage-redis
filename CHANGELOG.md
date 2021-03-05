@@ -4,11 +4,11 @@
 
 - replace nestjs-throttler with @nestjs/throttler package ([4184f61](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4184f61d3c15c922e60312befbb2ead8c6270f64))
 
-## [0.1.7](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.6...v0.1.7) (2021-03-05)
+## [0.1.7](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.5...v0.1.7) (2021-02-22)
 
-### Features
+### Bug Fixes
 
-- replace nestjs-throttler with @nestjs/throttler package ([4184f61](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/4184f61d3c15c922e60312befbb2ead8c6270f64))
+- adjust addRecord to set the expiry time correctly ([5498181](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/5498181a3818007803495fbd7b3921123732e0d4))
 
 ## [0.1.6](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.5...v0.1.6) (2020-06-10)
 

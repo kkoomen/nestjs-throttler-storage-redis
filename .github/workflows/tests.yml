@@ -15,6 +15,12 @@ jobs:
         node-version: [10, 12, 14]
     steps:
       - uses: actions/checkout@v2
+      - name: Initiate docker containers
+        run: docker-compose -f docker-compose.yml up -d
+      - name: Check running containers
+        run: docker ps -a
+      - name: Check docker logs
+        run: docker logs redis
       - name: Setup NodeJS v${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
