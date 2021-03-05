@@ -3,7 +3,7 @@ import { AbstractHttpAdapter, APP_GUARD } from '@nestjs/core';
 import { ExpressAdapter } from '@nestjs/platform-express';
 import { FastifyAdapter } from '@nestjs/platform-fastify';
 import { Test, TestingModule } from '@nestjs/testing';
-import { ThrottlerGuard } from 'nestjs-throttler';
+import { ThrottlerGuard } from '@nestjs/throttler';
 import { ControllerModule } from './app/controllers/controller.module';
 import { httPromise } from './utility/httpromise';
 

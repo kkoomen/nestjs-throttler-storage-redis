@@ -1,7 +1,7 @@
 {
   "name": "nestjs-throttler-storage-redis",
-  "version": "0.1.7",
-  "description": "Redis storage provider for the nestjs-throttler package",
+  "version": "0.1.8",
+  "description": "Redis storage provider for the @nestjs/throttler package",
   "author": "Kim 金可明 <koomen@pm.me>",
   "keywords": [
     "nestjs",
@@ -36,8 +36,8 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "devDependencies": {
-    "@commitlint/cli": "^11.0.0",
-    "@commitlint/config-conventional": "^11.0.0",
+    "@commitlint/cli": "^12.0.0",
+    "@commitlint/config-conventional": "^12.0.0",
     "@nestjs/cli": "^7.5.5",
     "@nestjs/common": "^7.6.13",
     "@nestjs/core": "^7.6.13",
@@ -48,6 +48,7 @@
     "@nestjs/platform-ws": "^7.6.13",
     "@nestjs/schematics": "^7.2.7",
     "@nestjs/testing": "^7.6.13",
+    "@nestjs/throttler": "^1.0.0",
     "@nestjs/websockets": "^7.6.13",
     "@types/express": "^4.17.11",
     "@types/ioredis": "^4.19.4",
@@ -67,7 +68,6 @@
     "ioredis": "^4.22.0",
     "jest": "^26.6.3",
     "lint-staged": "^10.5.4",
-    "nestjs-throttler": "^0.3.0",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
     "reflect-metadata": "^0.1.13",
@@ -75,7 +75,7 @@
     "rxjs": "^6.6.3",
     "socket.io-client": "^2.4.0",
     "supertest": "^6.1.3",
-    "ts-jest": "26.5.1",
+    "ts-jest": "26.5.2",
     "ts-loader": "^8.0.17",
     "ts-node": "^9.1.1",
     "tsconfig-paths": "^3.9.0",
@@ -84,8 +84,8 @@
   "peerDependencies": {
     "@nestjs/common": "^7.6.13",
     "@nestjs/core": "^7.6.13",
+    "@nestjs/throttler": "^1.0.0",
     "ioredis": "^4.22.0",
-    "nestjs-throttler": "^0.3.0",
     "reflect-metadata": "^0.1.13"
   },
   "jest": {
