@@ -6,6 +6,7 @@ import { Test, TestingModule } from '@nestjs/testing';
 import { ThrottlerGuard } from '@nestjs/throttler';
 import { ControllerModule } from './app/controllers/controller.module';
 import { httPromise } from './utility/httpromise';
+import { redis } from './utility/redis';
 
 describe.each`
   adapter                 | adapterName
@@ -15,6 +16,7 @@ describe.each`
   let app: INestApplication;
 
   beforeAll(async () => {
+    await redis.flushall();
     const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [ControllerModule],
       providers: [
@@ -31,6 +33,9 @@ describe.each`
 
   afterAll(async () => {
     await app.close();
+    if (adapter instanceof FastifyAdapter) {
+      await redis.quit();
+    }
   });
 
   describe('controllers', () => {
