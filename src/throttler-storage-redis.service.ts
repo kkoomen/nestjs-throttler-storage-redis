@@ -8,9 +8,12 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
 
   constructor(redis?: Redis.Redis);
   constructor(options?: Redis.RedisOptions);
-  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions) {
+  constructor(url?: string);
+  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions | string) {
     if (redisOrOptions instanceof Redis) {
       this.redis = redisOrOptions;
+    } else if (typeof redisOrOptions === 'string') {
+      this.redis = new Redis(redisOrOptions as string);
     } else {
       this.redis = new Redis(redisOrOptions);
     }
