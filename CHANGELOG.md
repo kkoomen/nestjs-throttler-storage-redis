@@ -1,3 +1,9 @@
+## [0.1.11](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.10...v0.1.11) (2021-03-09)
+
+### Features
+
+- allow to pass a string url to redis ([39cd987](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/39cd987f3dd15c89baab57c2077557eec8d03f4a))
+
 ## [0.1.10](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.8...v0.1.10) (2021-03-08)
 
 ### Bug Fixes
