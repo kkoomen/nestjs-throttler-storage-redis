@@ -965,12 +965,12 @@
     tslib "2.1.0"
 
 "@nestjs/platform-ws@^7.6.13":
-  version "7.6.13"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-7.6.13.tgz"
-  integrity sha512-F7BtcFAONIvVBbnDvNg2WU881ipe+W8NUl4KZr2bxtJwH8VzFXuZppUZWQYlibfG0kUuS13x0jJhdwPhw2MLJA==
+  version "7.6.14"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-7.6.14.tgz#63e63c1ce58d73c8d779ace29f7b24de3cf976ca"
+  integrity sha512-0Wm5Ti88bLjLu7oShv/Rhda9o+RWovhA8nk4nbH8JoGGGQefKARm61oWYu7Tl9D5WlEo9mdsvLz2BDuHspDhkw==
   dependencies:
     tslib "2.1.0"
-    ws "7.4.3"
+    ws "7.4.4"
 
 "@nestjs/schematics@^7.1.0", "@nestjs/schematics@^7.2.7":
   version "7.3.0"
@@ -9890,10 +9890,10 @@ write-file-atomic@^3.0.0:
     signal-exit "^3.0.2"
     typedarray-to-buffer "^3.1.5"
 
-ws@7.4.3, ws@^7.2.3, ws@~7.4.2:
-  version "7.4.3"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.3.tgz"
-  integrity sha512-hr6vCR76GsossIRsr8OLR9acVVm1jyfEWvhbNjtgPOrfvAlKzvyeg/P6r8RuDjRyrcQoPQT7K0DGEPc7Ae6jzA==
+ws@7.4.4, ws@^7.2.3, ws@~7.4.2:
+  version "7.4.4"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-7.4.4.tgz#383bc9742cb202292c9077ceab6f6047b17f2d59"
+  integrity sha512-Qm8k8ojNQIMx7S+Zp8u/uHOx7Qazv3Yv4q68MiWWWOJhiwG5W3x7iqmRtJo8xxrciZUY4vRxUTJCKuRnF28ZZw==
 
 ws@^5.2.0:
   version "5.2.2"
