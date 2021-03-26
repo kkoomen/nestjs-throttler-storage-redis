@@ -1,3 +1,9 @@
+## [0.1.12](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.11...v0.1.12) (2021-03-26)
+
+### Bug Fixes
+
+- add COUNT value to scan method, fixes [#322](https://github.com/kkoomen/nestjs-throttler-storage-redis/issues/322) ([ed4dc9a](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/ed4dc9a39b9a51779272f53b8518c4fd167794d6))
+
 ## [0.1.11](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.10...v0.1.11) (2021-03-09)
 
 ### Features
