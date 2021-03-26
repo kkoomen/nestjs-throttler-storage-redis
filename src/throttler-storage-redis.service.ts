@@ -20,7 +20,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
   }
 
   async getRecord(key: string): Promise<number[]> {
-    const ttls = (await this.redis.scan(0, 'MATCH', `${key}:*`)).pop();
+    const ttls = (await this.redis.scan(0, 'MATCH', `${key}:*`, 'COUNT', 10000)).pop();
     return (ttls as string[]).map((k) => parseInt(k.split(':').pop())).sort();
   }
 
