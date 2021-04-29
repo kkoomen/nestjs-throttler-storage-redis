@@ -1,0 +1,45 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 10
+  labels:
+  - dependencies
+  ignore:
+  - dependency-name: socket.io-client
+    versions:
+    - ">= 3.a, < 4"
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.28
+    - 15.0.0
+  - dependency-name: ts-loader
+    versions:
+    - 9.0.0
+    - 9.1.0
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.19.0
+    - 4.21.0
+  - dependency-name: rxjs
+    versions:
+    - 6.6.7
+  - dependency-name: "@nestjs/core"
+    versions:
+    - 7.6.14
+  - dependency-name: "@nestjs/schematics"
+    versions:
+    - 7.2.9
+  - dependency-name: typescript
+    versions:
+    - 3.9.8
+    - 4.2.2
+    - 4.2.3
+  - dependency-name: husky
+    versions:
+    - 5.1.2
+  - dependency-name: "@nestjs/testing"
+    versions:
+    - 7.6.12
