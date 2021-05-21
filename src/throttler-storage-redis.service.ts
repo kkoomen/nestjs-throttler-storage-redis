@@ -4,12 +4,15 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
 @Injectable()
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
-  redis: Redis.Redis;
+  protected redis: Redis.Redis;
+  protected scanCount: number;
 
-  constructor(redis?: Redis.Redis);
-  constructor(options?: Redis.RedisOptions);
-  constructor(url?: string);
-  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions | string) {
+  constructor(redis?: Redis.Redis, scanCount?: number);
+  constructor(options?: Redis.RedisOptions, scanCount?: number);
+  constructor(url?: string, scanCount?: number);
+  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions | string, scanCount?: number) {
+    this.scanCount = typeof scanCount === 'undefined' ? 1000 : scanCount;
+
     if (redisOrOptions instanceof Redis) {
       this.redis = redisOrOptions;
     } else if (typeof redisOrOptions === 'string') {
@@ -20,7 +23,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
   }
 
   async getRecord(key: string): Promise<number[]> {
-    const ttls = (await this.redis.scan(0, 'MATCH', `${key}:*`, 'COUNT', 10000)).pop();
+    const ttls = (await this.redis.scan(0, 'MATCH', `${key}:*`, 'COUNT', this.scanCount)).pop();
     return (ttls as string[]).map((k) => parseInt(k.split(':').pop())).sort();
   }
 
