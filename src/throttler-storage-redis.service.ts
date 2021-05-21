@@ -4,8 +4,8 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
 @Injectable()
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
-  protected redis: Redis.Redis;
-  protected scanCount: number;
+  redis: Redis.Redis;
+  scanCount: number;
 
   constructor(redis?: Redis.Redis, scanCount?: number);
   constructor(options?: Redis.RedisOptions, scanCount?: number);
