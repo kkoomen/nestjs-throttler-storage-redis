@@ -978,9 +978,9 @@
     tslib "2.2.0"
 
 "@nestjs/throttler@^1.1.4":
-  version "1.1.4"
-  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-1.1.4.tgz#27afbb3d1b8bbcebacf37ace334c72dc20215dca"
-  integrity sha512-4ewtIx+pREVzhvvhSam+Zdbm6mr8Vo81MC4a1ETj4Aql+61VTjJ7avT2PBjMb0wwcdju9N7OTrUGST8hRkvnZA==
+  version "1.2.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-1.2.0.tgz#d7edb8576c68bcc6ad8ce00561f251ad16217e2a"
+  integrity sha512-98r5FLRLWhAtfKZo7qg4kjbBeRAj1v8a+4BrLE9rW+GIYxFGxfDZiNqyJEhUFyTfhRV/bELb0Idra1Iwn6kPPg==
   dependencies:
     md5 "^2.2.1"
 
