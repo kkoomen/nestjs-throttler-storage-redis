@@ -17,8 +17,8 @@ Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/thr
 # Usage
 
 ```ts
-import { ThrottlerModule } from '';
-import { ThrottlerStorageRedisService } from '-storage-redis';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 
 @Module({
   imports: [
@@ -33,8 +33,8 @@ export class AppModule {}
 ```
 
 ```ts
-import { ThrottlerModule } from '';
-import { ThrottlerStorageRedisService } from '-storage-redis';
+import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 
 @Module({
   imports: [
