@@ -1339,9 +1339,9 @@
   integrity sha512-2aoSC4UUbHDj2uCsCxcG/vRMXey/m17bC7UwitVm5hn22nI8O8Y9iDpA76Orc+DWkQ4zZrOKEshCqR/jSuXAHA==
 
 "@types/ioredis@^4.26.4":
-  version "4.27.3"
-  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.27.3.tgz#0cb0f018840c6c6cdfe5e56d2536f21da4d9e06e"
-  integrity sha512-XKt0Jh+UTleEPm6RoumukUOIKl14eQPQ+qhZgtAV9LpWH1ISmyI2BLyXreKO8WAF3tYgPQTcUmajbdrHs/esaQ==
+  version "4.27.4"
+  resolved "https://registry.yarnpkg.com/@types/ioredis/-/ioredis-4.27.4.tgz#2caf9d0222640c9d7ce278fca2f9892c1323f9c8"
+  integrity sha512-uTAA/woL//GxXQI1e9FuUoDZCpP8yn5LXQdea1IEFyLtb8GP2w3HfOE+SqglF6QSAp/3cZLWzrMhHqWSYI3bfg==
   dependencies:
     "@types/node" "*"
 
