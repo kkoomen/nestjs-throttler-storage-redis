@@ -1,3 +1,12 @@
+## [0.1.18](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.17...v0.1.18) (2021-11-19)
+
+
+### Bug Fixes
+
+* adjust preversion script ([33f07fb](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/33f07fb36032298e136a18d4ade7490dcd4fb6e3))
+
+
+
 ## [0.1.17](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.16...v0.1.17) (2021-11-19)
 
 
