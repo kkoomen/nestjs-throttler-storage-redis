@@ -1,3 +1,12 @@
+## [0.1.17](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.16...v0.1.17) (2021-11-19)
+
+
+### Bug Fixes
+
+* added keyPrefix redis scan ([b5acbfb](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/b5acbfbbdf8a777f2c3ce87f2ad83c8b49fc7093))
+
+
+
 ## [0.1.16](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.15...v0.1.16) (2021-11-10)
 
 
