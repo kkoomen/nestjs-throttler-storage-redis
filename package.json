@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "prebuild": "rimraf dist",
-    "preversion": "yarn run format && yarn run lint && yarn build",
+    "preversion": "yarn run format && yarn run lint && git add -A && yarn build",
     "build": "nest build",
     "commit": "git-cz",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
