@@ -1,17 +1,17 @@
 import { Injectable, OnModuleDestroy } from '@nestjs/common';
-import * as Redis from 'ioredis';
+import Redis, { RedisOptions } from 'ioredis';
 import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
 @Injectable()
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnModuleDestroy {
-  redis: Redis.Redis;
+  redis: Redis;
   disconnectRequired?: boolean;
   scanCount: number;
 
-  constructor(redis?: Redis.Redis, scanCount?: number);
-  constructor(options?: Redis.RedisOptions, scanCount?: number);
+  constructor(redis?: Redis, scanCount?: number);
+  constructor(options?: RedisOptions, scanCount?: number);
   constructor(url?: string, scanCount?: number);
-  constructor(redisOrOptions?: Redis.Redis | Redis.RedisOptions | string, scanCount?: number) {
+  constructor(redisOrOptions?: Redis | RedisOptions | string, scanCount?: number) {
     this.scanCount = typeof scanCount === 'undefined' ? 1000 : scanCount;
 
     if (redisOrOptions instanceof Redis) {
