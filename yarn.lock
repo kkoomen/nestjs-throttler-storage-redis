@@ -1213,9 +1213,9 @@
     tslib "2.2.0"
 
 "@nestjs/throttler@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-2.0.0.tgz#bb5f627cbaee369703d3d8d4ec7af6e4c6ab693a"
-  integrity sha512-N20iaRPqm0PNfZoCtcmwCoJzYBMUT9WveafFjGiQN0ov63RfVwzu0+bdv4AFxITd/t3vEDWoadzfUGyJBD43hw==
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-2.0.1.tgz#97611c4bdffdb1df00fcaeb7ac55fcfee1864bf6"
+  integrity sha512-ginW73rmOjBN27USuGidetEoa8VSGzxW3kEuCquEd5mETEtBfgIm4901b9tuLDnsczttE01imCHZ53J7+AuLJg==
   dependencies:
     md5 "^2.2.1"
 
@@ -8753,9 +8753,9 @@ trim-newlines@^3.0.0:
   integrity sha512-c1PTsA3tYrIsLGkJkzHF+w9F2EyxfXGo4UyJc4pFL++FMjnq0HJS69T3M7d//gKrFKwy429bouPescbjecU+Zw==
 
 trim-off-newlines@^1.0.0:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.1.tgz#9f9ba9d9efa8764c387698bcbfeb2c848f11adb3"
-  integrity sha1-n5up2e+odkw4dpi8v+sshI8RrbM=
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/trim-off-newlines/-/trim-off-newlines-1.0.3.tgz#8df24847fcb821b0ab27d58ab6efec9f2fe961a1"
+  integrity sha512-kh6Tu6GbeSNMGfrrZh6Bb/4ZEHV1QlB4xNDBeog8Y9/QwFlKTRyWvY3Fs9tRDAMZliVUwieMgEdIeL/FtqjkJg==
 
 ts-invariant@^0.4.0:
   version "0.4.4"
