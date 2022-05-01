@@ -27,7 +27,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis {
       await this.redis.scan(
         0,
         'MATCH',
-        `${this.redis.options.keyPrefix}${key}:*`,
+        `${this.redis?.options?.keyPrefix}${key}:*`,
         'COUNT',
         this.scanCount,
       )
