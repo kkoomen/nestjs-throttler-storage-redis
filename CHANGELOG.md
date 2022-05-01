@@ -1,3 +1,49 @@
+## [0.1.18](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.17...v0.1.18) (2021-11-19)
+
+
+### Bug Fixes
+
+* adjust preversion script ([33f07fb](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/33f07fb36032298e136a18d4ade7490dcd4fb6e3))
+
+
+
+## [0.1.17](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.16...v0.1.17) (2021-11-19)
+
+
+### Bug Fixes
+
+* added keyPrefix redis scan ([b5acbfb](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/b5acbfbbdf8a777f2c3ce87f2ad83c8b49fc7093))
+
+
+
+## [0.1.16](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.15...v0.1.16) (2021-11-10)
+
+
+### Bug Fixes
+
+* disconnect redis to avoid open handles ([52470fa](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/52470fac523c6ad84f3de79e4dac4905f41b8009))
+
+
+
+## [0.1.15](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.14...v0.1.15) (2021-08-23)
+
+
+
+## [0.1.14](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.13...v0.1.14) (2021-08-23)
+
+
+### Bug Fixes
+
+* remove protected keywords ([6ce0e81](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/6ce0e8140e1eb7c0a6524a23207055e5696fc9d4))
+* upgrade all packages ([b428796](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/b42879660c0bc2dd8eb8a3cd6f382afc59489926))
+
+
+### Features
+
+* allow to change COUNT value in redis scan method ([#392](https://github.com/kkoomen/nestjs-throttler-storage-redis/issues/392)) ([426ec22](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/426ec22272b6bfe722638342cbacb3313698a5ce))
+
+
+
 ## [0.1.13](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.12...v0.1.13) (2021-03-26)
 
 ## [0.1.12](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.11...v0.1.12) (2021-03-26)
