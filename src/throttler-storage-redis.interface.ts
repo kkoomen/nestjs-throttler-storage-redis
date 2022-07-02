@@ -1,10 +1,10 @@
-import Redis from 'ioredis';
+import Redis, { Cluster } from 'ioredis';
 
 export interface ThrottlerStorageRedis {
   /**
    * The redis instance.
    */
-  redis: Redis;
+  redis: Redis | Cluster;
 
   /**
    * The amount of items that redis should return for each scan.
