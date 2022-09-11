@@ -56,7 +56,7 @@
     "@types/socket.io-client": "^3.0.0",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.35.1",
-    "@typescript-eslint/parser": "^4.27.0",
+    "@typescript-eslint/parser": "^5.36.2",
     "apollo-server-express": "^2.25.1",
     "conventional-changelog-cli": "^2.1.1",
     "cz-conventional-changelog": "^3.3.0",
