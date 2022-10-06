@@ -1232,12 +1232,12 @@
     tslib "2.4.0"
 
 "@nestjs/platform-ws@>=7.0.0":
-  version "9.0.11"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-9.0.11.tgz#d2375a44201e794727bb99ebae973c36d1ee5a5e"
-  integrity sha512-0e2AFXTIdxB/TLN5Ll2ipg2sBfZVzgMWSHL0IWUItQO/f6JI8gMFRtxopdSC/1mTv2zbgAI8VSwKEaqrhbztgg==
+  version "9.1.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-9.1.4.tgz#60b2d4992249dd45c8f3748d5796dde8c06175c7"
+  integrity sha512-yHLloYioPdcx2RISM9w7AiHTLa7FwvecaT76QzaGraCtmE0r/ldDQAa5JNQ+620JZpCCGoq307pVQHNRYyJtJQ==
   dependencies:
     tslib "2.4.0"
-    ws "8.8.1"
+    ws "8.9.0"
 
 "@nestjs/schematics@>=7.0.0", "@nestjs/schematics@^9.0.0":
   version "9.0.3"
@@ -4326,11 +4326,6 @@ function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/function-bind/-/function-bind-1.1.1.tgz#a56899d3ea3c9bab874bb9773b7c5ede92f4895d"
   integrity sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==
-
-functional-red-black-tree@^1.0.1:
-  version "1.0.1"
-  resolved "https://registry.yarnpkg.com/functional-red-black-tree/-/functional-red-black-tree-1.0.1.tgz#1b0ab3bd553b2a0d6399d29c0e3ea0b252078327"
-  integrity sha1-GwqzvVU7Kg1jmdKcDj6gslIHgyc=
 
 gensync@^1.0.0-beta.2:
   version "1.0.0-beta.2"
@@ -8436,6 +8431,11 @@ ws@8.8.1:
   version "8.8.1"
   resolved "https://registry.yarnpkg.com/ws/-/ws-8.8.1.tgz#5dbad0feb7ade8ecc99b830c1d77c913d4955ff0"
   integrity sha512-bGy2JzvzkPowEJV++hF07hAD6niYSr0JzBNo/J29WsB57A2r7Wlc1UFcTR9IzrPvuNVO4B8LGqF8qcpsVOhJCA==
+
+ws@8.9.0:
+  version "8.9.0"
+  resolved "https://registry.yarnpkg.com/ws/-/ws-8.9.0.tgz#2a994bb67144be1b53fe2d23c53c028adeb7f45e"
+  integrity sha512-Ja7nszREasGaYUYCI2k4lCKIRTt+y7XuqVoHR44YpI49TtryyqbqvDMn5eqfW7e6HzTukDRIsXqzVHScqRcafg==
 
 "ws@^5.2.0 || ^6.0.0 || ^7.0.0", ws@^7.4.5:
   version "7.5.0"
