@@ -1153,13 +1153,13 @@
     webpack-node-externals "3.0.0"
 
 "@nestjs/common@>=7.0.0":
-  version "9.0.11"
-  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-9.0.11.tgz#5747cfbb5d94d909bc2894bf2a5bec83fca809c5"
-  integrity sha512-oYLIcOal3QOwcqt6goXovRNg8ZkalyOMjH0oYYzfJLrait6P7c6nAeWHu4qFDThY7GoZHEanLgji1qlqVEW09g==
+  version "9.1.4"
+  resolved "https://registry.yarnpkg.com/@nestjs/common/-/common-9.1.4.tgz#83ed4f5627db12c0e0aaf1438becba8927fb97e2"
+  integrity sha512-hmGTZ8ShKFDqqlU02uU8e/8PNE4bnES4pcFa6s/T1pLDYWjyf/75Klunro1W4aQPHcxnnohBmB27WxMqFTPEfw==
   dependencies:
     iterare "1.2.1"
     tslib "2.4.0"
-    uuid "8.3.2"
+    uuid "9.0.0"
 
 "@nestjs/core@>=7.0.0":
   version "9.1.2"
