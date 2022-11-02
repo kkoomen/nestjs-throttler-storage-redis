@@ -1246,9 +1246,9 @@
     md5 "^2.2.1"
 
 "@nestjs/websockets@>=7.0.0":
-  version "9.1.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-9.1.2.tgz#d668793173cc550f1e14fea698f4c7713266f79c"
-  integrity sha512-mWMivndv7WuA4qQNRsp8lNHEGe9cL6K3nv9TplAOcRtBT33olqKynjNGHppSjU2an44t3rnT4//6SyyeLbO/eQ==
+  version "9.1.6"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-9.1.6.tgz#db23702c7f9c24234b4bf194da7b0a6c1621dd69"
+  integrity sha512-n6ldWU2FdVFESTj0ahmGLDEOT0sc3QKLya7N/L7dh8Z5F50gqd5Qw6LPmhRWcyXLGi+1Ugn1ZMnLn62B1CsZ7A==
   dependencies:
     iterare "1.2.1"
     object-hash "3.0.0"
