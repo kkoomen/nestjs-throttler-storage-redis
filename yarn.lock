@@ -1205,12 +1205,12 @@
     tslib "2.4.0"
 
 "@nestjs/platform-socket.io@>=7.0.0":
-  version "9.1.6"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-9.1.6.tgz#e0591ffb1d486c6bb7c4fc82188ba6287a5c649e"
-  integrity sha512-h1cilQaVimA3HjlEQWXidAZ3apaooeH1RTL+yZRZ1Wa/FPybiJCgkfDm/9K0zaqWSBdSPiNYArjyaoW/G2PDLg==
+  version "9.2.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-9.2.0.tgz#5194a13d4ef5c70b32b2bcc64379e07674ddf0ab"
+  integrity sha512-ttxXtqHV3Cpk5AfZOxfE8urILV5oLBpG21vdyqUHiL0YDuhHdc2tBz5GKSYAfsWefmVeQQiBAV9dqaa23Rf0nQ==
   dependencies:
     socket.io "4.5.3"
-    tslib "2.4.0"
+    tslib "2.4.1"
 
 "@nestjs/platform-ws@>=7.0.0":
   version "9.1.6"
@@ -8046,10 +8046,15 @@ tsconfig-paths@^3.14.1:
     minimist "^1.2.6"
     strip-bom "^3.0.0"
 
-tslib@2.4.0, tslib@^2.1.0, tslib@^2.4.0:
+tslib@2.4.0:
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.0.tgz#7cecaa7f073ce680a05847aa77be941098f36dc3"
   integrity sha512-d6xOpEDfsi2CZVlPQzGeux8XMwLT9hssAsaPYExaQMuYskwb+x1x7J371tWlbBdWHroy99KnVB6qIkUbs5X3UQ==
+
+tslib@2.4.1, tslib@^2.1.0, tslib@^2.4.0:
+  version "2.4.1"
+  resolved "https://registry.yarnpkg.com/tslib/-/tslib-2.4.1.tgz#0d0bfbaac2880b91e22df0768e55be9753a5b17e"
+  integrity sha512-tGyy4dAjRIEwI7BzsB0lynWgOpfqjUdq91XXAlIWD2OwKBH7oCl/GZG/HT4BOHrTlPMOASlMQ7veyTqpmRcrNA==
 
 tslib@^1.10.0, tslib@^1.8.1, tslib@^1.9.0, tslib@^1.9.3:
   version "1.14.1"
