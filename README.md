@@ -16,6 +16,8 @@ Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/thr
 
 # Usage
 
+Basic usage:
+
 ```ts
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
@@ -32,6 +34,8 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 export class AppModule {}
 ```
 
+Inject another config module and service:
+
 ```ts
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
@@ -45,6 +49,39 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
         ttl: config.get('THROTTLE_TTL'),
         limit: config.get('THROTTLE_LIMIT'),
         storage: new ThrottlerStorageRedisService(),
+      }),
+    }),
+  ],
+})
+export class AppModule {}
+```
+
+Using redis clusters:
+
+```ts
+import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerStorageRedisClusterService } from 'nestjs-throttler-storage-redis';
+
+const nodes = [
+  { host: 'localhost', port: 6379 },
+  { host: 'localhost', port: 6380 }
+];
+
+const options = {
+  redisOptions: {
+    password: 'your-redis-password'
+  }
+};
+
+@Module({
+  imports: [
+    ThrottlerModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: (config: ConfigService) => ({
+        ttl: config.get('THROTTLE_TTL'),
+        limit: config.get('THROTTLE_LIMIT'),
+        storage: new ThrottlerStorageRedisClusterService(nodes, options),
       }),
     }),
   ],

@@ -1,10 +1,10 @@
-import Redis from 'ioredis';
+import Redis, { Cluster } from 'ioredis';
 
 export interface ThrottlerStorageRedis {
   /**
    * The redis instance.
    */
-  redis: Redis;
+  redis: Redis | Cluster;
 
   /**
    * The amount of items that redis should return for each scan.
@@ -21,7 +21,7 @@ export interface ThrottlerStorageRedis {
    * Add a record to the storage. The record will automatically be removed from
    * the storage once its TTL has been reached.
    */
-  addRecord(key: string, ttl: number): Promise<void>;
+  addRecord(key: string, value: string, ttl: number): Promise<void>;
 }
 
 export const ThrottlerStorageRedis = Symbol('ThrottlerStorageRedis');
