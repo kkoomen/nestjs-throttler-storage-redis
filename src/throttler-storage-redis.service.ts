@@ -6,14 +6,11 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnModuleDestroy {
   redis: Redis;
   disconnectRequired?: boolean;
-  scanCount: number;
 
-  constructor(redis?: Redis, scanCount?: number);
-  constructor(options?: RedisOptions, scanCount?: number);
-  constructor(url?: string, scanCount?: number);
-  constructor(redisOrOptions?: Redis | RedisOptions | string, scanCount?: number) {
-    this.scanCount = typeof scanCount === 'undefined' ? 1000 : scanCount;
-
+  constructor(redis?: Redis);
+  constructor(options?: RedisOptions);
+  constructor(url?: string);
+  constructor(redisOrOptions?: Redis | RedisOptions | string) {
     if (redisOrOptions instanceof Redis) {
       this.redis = redisOrOptions;
     } else if (typeof redisOrOptions === 'string') {
@@ -25,21 +22,49 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     }
   }
 
+  /**
+   * @description: This method look for members (records) in a Redis set, see: https://redis.io/docs/data-types/sets/
+   *
+   * @param key
+   */
   async getRecord(key: string): Promise<number[]> {
-    const ttls = (
-      await this.redis.scan(
-        0,
-        'MATCH',
-        `${this.redis?.options?.keyPrefix}${key}:*`,
-        'COUNT',
-        this.scanCount,
-      )
-    ).pop();
-    return (ttls as string[]).map((k) => parseInt(k.split(':').pop())).sort();
+    const setMembers = await this.redis.smembers(key);
+    const now = +new Date();
+
+    /*
+     That is a Redis SET cleaning mechanism.
+     - There is no way to set ttl for each set member separately.
+     - Each time new member is added to the set, set expiration is moving forward.
+     - We need to clean expired members manually (to avoid extra memory usage).
+     - That is needed in cases when set not expires during long period of time (because of continuous addRecord triggers)
+    */
+    const expiredMembers = setMembers.filter((m) => +m < now);
+    if (expiredMembers.length) {
+      const multi = this.redis.multi();
+      for (const expiredMember of expiredMembers) {
+        multi.srem(expiredMember);
+      }
+      await multi.exec();
+    }
+
+    return setMembers
+      .filter((m) => +m > now)
+      .map((m) => +m)
+      .sort();
   }
 
+  /**
+   * @description: This method adds a record (member) to the Redis Set, see: https://redis.io/docs/data-types/sets/
+   *
+   * @param key
+   * @param ttl
+   */
   async addRecord(key: string, ttl: number): Promise<void> {
-    await this.redis.set(`${key}:${Date.now() + ttl * 1000}`, ttl, 'EX', ttl);
+    // add expiration timestamp to the set, and move set expiration forward
+    const multi = this.redis.multi();
+    multi.sadd(key, Date.now() + ttl * 1000);
+    multi.expire(key, ttl);
+    await multi.exec();
   }
 
   onModuleDestroy() {
