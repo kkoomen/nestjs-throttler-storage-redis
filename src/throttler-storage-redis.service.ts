@@ -29,7 +29,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
    */
   async getRecord(key: string): Promise<number[]> {
     const setMembers = await this.redis.smembers(key);
-    const now = +new Date();
+    const now = new Date().getTime();
 
     /*
      That is a Redis SET cleaning mechanism.
