@@ -22,11 +22,6 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     }
   }
 
-  /**
-   * @description: This method look for members (records) in a Redis set, see: https://redis.io/docs/data-types/sets/
-   *
-   * @param key
-   */
   async getRecord(key: string): Promise<number[]> {
     const setMembers = await this.redis.smembers(key);
     const now = new Date().getTime();
@@ -47,12 +42,6 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       .sort();
   }
 
-  /**
-   * @description: This method adds a record (member) to the Redis Set, see: https://redis.io/docs/data-types/sets/
-   *
-   * @param key
-   * @param ttl
-   */
   async addRecord(key: string, ttl: number): Promise<void> {
     // add expiration timestamp to the set, and move set expiration forward
     const multi = this.redis.multi();
