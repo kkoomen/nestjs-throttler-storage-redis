@@ -31,13 +31,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     const setMembers = await this.redis.smembers(key);
     const now = new Date().getTime();
 
-    /*
-     That is a Redis SET cleaning mechanism.
-     - There is no way to set ttl for each set member separately.
-     - Each time new member is added to the set, set expiration is moving forward.
-     - We need to clean expired members manually (to avoid extra memory usage).
-     - That is needed in cases when set not expires during long period of time (because of continuous addRecord triggers)
-    */
+    // Clean expired members manually (to avoid extra memory usage)
     const expiredMembers = setMembers.filter((m) => +m < now);
     if (expiredMembers.length) {
       const multi = this.redis.multi();
