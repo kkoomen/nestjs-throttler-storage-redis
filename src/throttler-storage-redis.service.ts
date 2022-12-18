@@ -32,7 +32,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     const now = new Date().getTime();
 
     // Clean expired members manually (to avoid extra memory usage)
-    const expiredMembers = setMembers.filter((m) => +m < now);
+    const expiredMembers = setMembers.filter((m: string) => parseInt(m) < now);
     if (expiredMembers.length) {
       const multi = this.redis.multi();
       for (const expiredMember of expiredMembers) {
@@ -42,8 +42,8 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     }
 
     return setMembers
-      .filter((m) => +m > now)
-      .map((m) => +m)
+      .filter((m: string) => parseInt(m) > now)
+      .map((m: string) => parseInt(m))
       .sort();
   }
 
