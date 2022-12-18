@@ -24,7 +24,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
 
   async getRecord(key: string): Promise<number[]> {
     const setMembers = await this.redis.smembers(key);
-    const now = new Date().getTime();
+    const now = Date.now();
 
     // Clean expired members manually (to avoid extra memory usage)
     const expiredMembers = setMembers.filter((m: string) => parseInt(m) < now);
@@ -45,7 +45,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
   async addRecord(key: string, ttl: number): Promise<void> {
     // add expiration timestamp to the set, and move set expiration forward
     const multi = this.redis.multi();
-    multi.sadd(key, Date.now().getTime() + ttl * 1000);
+    multi.sadd(key, Date.now() + ttl * 1000);
     multi.expire(key, ttl);
     await multi.exec();
   }
