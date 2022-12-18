@@ -56,7 +56,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
   async addRecord(key: string, ttl: number): Promise<void> {
     // add expiration timestamp to the set, and move set expiration forward
     const multi = this.redis.multi();
-    multi.sadd(key, Date.now() + ttl * 1000);
+    multi.sadd(key, Date.now().getTime() + ttl * 1000);
     multi.expire(key, ttl);
     await multi.exec();
   }
