@@ -7,12 +7,6 @@ export interface ThrottlerStorageRedis {
   redis: Redis;
 
   /**
-   * The amount of items that redis should return for each scan.
-   * @see https://redis.io/commands/scan#the-count-option
-   */
-  scanCount: number;
-
-  /**
    * Get a record via its key and return all its request ttls.
    */
   getRecord(key: string): Promise<number[]>;
