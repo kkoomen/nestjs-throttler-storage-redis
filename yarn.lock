@@ -1238,11 +1238,11 @@
     pluralize "8.0.0"
 
 "@nestjs/testing@>=7.0.0":
-  version "9.1.6"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-9.1.6.tgz#e85601d8cb5158bec4a5029b435c352dc440be9c"
-  integrity sha512-3kdTgiv5DHRHMQ/befLWd/60LZWjOM2V+SwOLqGkITt1yjo+jpkDze8/f0ZXVGEa6pcWYZ5oeedbL2T1nyUKSQ==
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-9.2.1.tgz#2a3f64214d58ec4ab878862395407947671e4ece"
+  integrity sha512-lemXZdRSuqoZ87l0orCrS/c7gqwxeduIFOd21g9g2RUeQ4qlWPegbQDKASzbfC28klPyrgJLW4MNq7uv2JwV8w==
   dependencies:
-    tslib "2.4.0"
+    tslib "2.4.1"
 
 "@nestjs/throttler@>=2.0.0":
   version "3.1.0"
