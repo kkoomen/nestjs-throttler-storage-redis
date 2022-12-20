@@ -6,15 +6,12 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnModuleDestroy {
   redis: Redis | Cluster;
   disconnectRequired?: boolean;
-  scanCount: number;
 
-  constructor(redis?: Redis, scanCount?: number);
-  constructor(options?: RedisOptions, scanCount?: number);
-  constructor(cluster?: Cluster, scanCount?: number);
-  constructor(url?: string, scanCount?: number);
-  constructor(redisOrOptions?: Redis | RedisOptions | Cluster | string, scanCount?: number) {
-    this.scanCount = typeof scanCount === 'undefined' ? 1000 : scanCount;
-
+  constructor(redis?: Redis);
+  constructor(cluster?: Cluster);
+  constructor(options?: RedisOptions);
+  constructor(url?: string);
+  constructor(redisOrOptions?: Redis | Cluster | RedisOptions | string) {
     if (redisOrOptions instanceof Redis || redisOrOptions instanceof Cluster) {
       this.redis = redisOrOptions;
     } else if (typeof redisOrOptions === 'string') {
@@ -25,52 +22,31 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
   }
 
   async getRecord(key: string): Promise<number[]> {
-    // Use the `scan` method to iterate over the keys of all databases in the cluster
-    let cursor = '0';
-    let keys: string[] = [];
-    do {
-      // Get the next set of keys using the cursor
-      const [newCursor, newKeys] = await this.redis.scan(cursor, 'MATCH', key, 'COUNT', this.scanCount);
-      cursor = newCursor;
+    const setMembers = await this.redis.smembers(key);
+    const now = Date.now();
 
-      // Add the new keys to the list of keys
-      keys = [...keys, ...newKeys];
-    } while (cursor !== '0');
-
-    // Get the members of the set stored at each key
-    const pipeline = this.redis.pipeline();
-    for (const key of keys) {
-      pipeline.smembers(key);
+    // Clean expired members manually (to avoid extra memory usage)
+    const expiredMembers = setMembers.filter((m: string) => parseInt(m) < now);
+    if (expiredMembers.length) {
+      const multi = this.redis.multi();
+      for (const expiredMember of expiredMembers) {
+        multi.srem(expiredMember);
+      }
+      await multi.exec();
     }
-    const values = await pipeline.exec();
 
-    // Map the values to an array of numbers representing the request TTLs
-    // and sort the array in ascending order
-    return values.map((value: [Error, string]) => parseInt(value[1], 10)).sort();
+    return setMembers
+      .filter((m: string) => parseInt(m) > now)
+      .map((m: string) => parseInt(m))
+      .sort();
   }
 
-  async addRecord(key: string, value: string, ttl: number): Promise<void> {
-    // Use the `keys` command instead of `scan` for Redis Clusters
-    if (this.redis instanceof Cluster) {
-      const keys = await this.redis.keys(key);
-
-      for (const key of keys) {
-        await this.redis.set(key, value, 'EX', ttl);
-      }
-    } else {
-      // Use `scan` for regular Redis instances
-      let cursor = '0';
-      do {
-        const [newCursor, keys] = await this.redis.scan(cursor, 'MATCH', key, 'COUNT', this.scanCount);
-        cursor = newCursor;
-
-        const pipeline = this.redis.pipeline();
-        for (const key of keys) {
-          pipeline.set(key, value, 'EX', ttl);
-        }
-        await pipeline.exec();
-      } while (cursor !== '0');
-    }
+  async addRecord(key: string, ttl: number): Promise<void> {
+    // add expiration timestamp to the set, and move set expiration forward
+    const multi = this.redis.multi();
+    multi.sadd(key, Date.now() + ttl * 1000);
+    multi.expire(key, ttl);
+    await multi.exec();
   }
 
   onModuleDestroy() {
