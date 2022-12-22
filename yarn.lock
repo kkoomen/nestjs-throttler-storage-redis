@@ -1211,9 +1211,9 @@
     tslib "2.4.1"
 
 "@nestjs/platform-socket.io@>=7.0.0":
-  version "9.2.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-9.2.0.tgz#5194a13d4ef5c70b32b2bcc64379e07674ddf0ab"
-  integrity sha512-ttxXtqHV3Cpk5AfZOxfE8urILV5oLBpG21vdyqUHiL0YDuhHdc2tBz5GKSYAfsWefmVeQQiBAV9dqaa23Rf0nQ==
+  version "9.2.1"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-9.2.1.tgz#0749ae70c439808f54dfafb3976637bd9ff6bac2"
+  integrity sha512-McLXgmkNDvYhX4RcudpLa/RNvy7NA4vb+7gJxJ12yp189Ijcaoktrex1a4F7PPQ5iKACiI/D0rfvQAe9P1ez+g==
   dependencies:
     socket.io "4.5.3"
     tslib "2.4.1"
