@@ -7,7 +7,7 @@ export const clusterNodes = [
   { host: '127.0.0.1', port: 7003 },
   { host: '127.0.0.1', port: 7004 },
   { host: '127.0.0.1', port: 7005 },
-]
+];
 
 export const cluster = new Cluster(clusterNodes);
 export const redis = new Redis();

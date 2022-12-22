@@ -14,9 +14,11 @@ async function flushdb(redisOrCluster: Redis | Cluster) {
   if (redisOrCluster instanceof Redis) {
     await redisOrCluster.flushall();
   } else {
-    await Promise.all(redisOrCluster.nodes('master').map(function (node) {
-      return node.flushall();
-    }));
+    await Promise.all(
+      redisOrCluster.nodes('master').map(function (node) {
+        return node.flushall();
+      }),
+    );
   }
 }
 
@@ -25,7 +27,6 @@ describe.each`
   ${redis}   | ${'single'}
   ${cluster} | ${'cluster'}
 `('Redis $instanceType instance', ({ instance: redisOrCluster }: { instance: Redis | Cluster }) => {
-
   afterAll(async () => {
     await redisOrCluster.quit();
   });
@@ -71,8 +72,8 @@ describe.each`
       });
 
       /**
-        * Tests for setting `@Throttle()` at the method level and for ignore routes
-        */
+       * Tests for setting `@Throttle()` at the method level and for ignore routes
+       */
       describe('AppController', () => {
         it('GET /ignored', async () => {
           const response = await httPromise(appUrl + '/ignored');
@@ -105,8 +106,8 @@ describe.each`
         });
       });
       /**
-        * Tests for setting `@Throttle()` at the class level and overriding at the method level
-        */
+       * Tests for setting `@Throttle()` at the class level and overriding at the method level
+       */
       describe('LimitController', () => {
         it.each`
           method   | url          | limit
@@ -134,8 +135,8 @@ describe.each`
         );
       });
       /**
-        * Tests for setting throttle values at the `forRoot` level
-        */
+       * Tests for setting throttle values at the `forRoot` level
+       */
       describe('DefaultController', () => {
         it('GET /default', async () => {
           const response = await httPromise(appUrl + '/default');

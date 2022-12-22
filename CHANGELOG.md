@@ -1,3 +1,21 @@
+# [0.2.0](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.18...v0.2.0) (2022-12-22)
+
+
+### Bug Fixes
+
+* add support for redis.options.keyPrefix ([29b009f](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/29b009f77cf824d98171de355145350e99d2e113))
+* remove @types/ioredis ([fa7d7b4](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/fa7d7b4579c14af9f5e25bddafc348ef32063180))
+* simplify code by removing cluster service; fix open handle in tests ([13681b3](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/13681b339c61f6967a35e47d7d4345b7d475efd9))
+* upgrade ioredis to v5 and fix usage ([ed48845](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/ed48845d56b4e28da9a2793cf2d704ac56c06759))
+
+
+### Features
+
+* add redis-clusters to docker and adjust tests ([0f8ad1e](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/0f8ad1e122cc98bb346d14d6be53c20b2b373246))
+* implement potentional option for redis clusters support ([#660](https://github.com/kkoomen/nestjs-throttler-storage-redis/issues/660)) ([d22573b](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/d22573bcce0fb080a30fa448e74877e6eefec1ac))
+
+
+
 ## [0.1.19](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.18...v0.1.19) (2022-05-01)
 
 
