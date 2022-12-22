@@ -1,3 +1,7 @@
+## [0.2.1](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.2.0...v0.2.1) (2022-12-22)
+
+
+
 # [0.2.0](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.1.18...v0.2.0) (2022-12-22)
 
 
