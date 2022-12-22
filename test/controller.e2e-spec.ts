@@ -8,7 +8,7 @@ import Redis, { Cluster } from 'ioredis';
 import { ClusterControllerModule } from './app/controllers/cluster-controller.module';
 import { ControllerModule } from './app/controllers/controller.module';
 import { httPromise } from './utility/httpromise';
-import { redis, cluster } from './utility/redis';
+import { cluster, redis } from './utility/redis';
 
 async function flushdb(redisOrCluster: Redis | Cluster) {
   if (redisOrCluster instanceof Redis) {
@@ -23,13 +23,11 @@ async function flushdb(redisOrCluster: Redis | Cluster) {
 describe.each`
   instance   | instanceType
   ${redis}   | ${'single'}
-  ${cluster} | ${'cluster'}
+  ${cluster} | ${'single'}
 `('Redis $instanceType instance', ({ instance: redisOrCluster }: { instance: Redis | Cluster }) => {
 
   afterAll(async () => {
-    if (redisOrCluster instanceof Cluster) {
-      redisOrCluster.disconnect();
-    }
+    await redisOrCluster.quit();
   });
 
   describe.each`
@@ -42,7 +40,7 @@ describe.each`
     beforeAll(async () => {
       await flushdb(redisOrCluster);
       const config = {
-        imports: [ControllerModule],
+        imports: [],
         providers: [
           {
             provide: APP_GUARD,
@@ -52,7 +50,9 @@ describe.each`
       };
 
       if (redisOrCluster instanceof Cluster) {
-        config.imports = [ClusterControllerModule];
+        config.imports.push(ClusterControllerModule);
+      } else {
+        config.imports.push(ControllerModule);
       }
 
       const moduleFixture: TestingModule = await Test.createTestingModule(config).compile();
