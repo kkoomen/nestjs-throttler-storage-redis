@@ -21,6 +21,7 @@ Basic usage:
 ```ts
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
+import Redis from 'ioredis';
 
 @Module({
   imports: [
