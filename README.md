@@ -16,6 +16,8 @@ Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/thr
 
 # Usage
 
+Basic usage:
+
 ```ts
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
@@ -25,12 +27,27 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
     ThrottlerModule.forRoot({
       ttl: 60,
       limit: 5,
+
+      // Below are possible options on how to configure the storage service.
+
+      // default config (host = localhost, port = 6379)
       storage: new ThrottlerStorageRedisService(),
+
+      // connection url
+      storage: new ThrottlerStorageRedisService('redis://'),
+
+      // redis object
+      storage: new ThrottlerStorageRedisService(new Redis()),
+
+      // redis clusters
+      storage: new ThrottlerStorageRedisService(new Redis.Cluster(nodes, options)),
     }),
   ],
 })
 export class AppModule {}
 ```
+
+Inject another config module and service:
 
 ```ts
 import { ThrottlerModule } from '@nestjs/throttler';
