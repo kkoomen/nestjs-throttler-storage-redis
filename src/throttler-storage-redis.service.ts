@@ -28,11 +28,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     // Clean expired members manually (to avoid extra memory usage)
     const expiredMembers = setMembers.filter((m: string) => parseInt(m) < now);
     if (expiredMembers.length) {
-      const multi = this.redis.multi();
-      for (const expiredMember of expiredMembers) {
-        multi.srem(expiredMember);
-      }
-      await multi.exec();
+      await this.redis.srem(key, expiredMembers);
     }
 
     return setMembers
