@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ThrottlerModule } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from '../../../src';
-import { cluster } from '../../utility/redis';
+import { cluster } from '../../utility/redis-cluster';
 import { AppService } from '../app.service';
 import { AppController } from './app.controller';
 import { DefaultController } from './default.controller';

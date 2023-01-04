@@ -8,7 +8,8 @@ import Redis, { Cluster } from 'ioredis';
 import { ClusterControllerModule } from './app/controllers/cluster-controller.module';
 import { ControllerModule } from './app/controllers/controller.module';
 import { httPromise } from './utility/httpromise';
-import { cluster, redis } from './utility/redis';
+import { redis } from './utility/redis';
+import { cluster } from './utility/redis-cluster';
 
 async function flushdb(redisOrCluster: Redis | Cluster) {
   if (redisOrCluster instanceof Redis) {
