@@ -5,7 +5,8 @@ import { ClusterControllerModule } from './controllers/cluster-controller.module
 import { ControllerModule } from './controllers/controller.module';
 
 @Module({
-  imports: [ControllerModule, ClusterControllerModule],
+  imports: [ControllerModule],
+  // imports: [ClusterControllerModule],
   providers: [
     {
       provide: APP_GUARD,
