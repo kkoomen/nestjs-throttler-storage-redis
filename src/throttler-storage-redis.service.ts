@@ -4,6 +4,7 @@ import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
 @Injectable()
 export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnModuleDestroy {
+  private _scriptSrc: string;
   redis: Redis | Cluster;
   disconnectRequired?: boolean;
 
@@ -19,30 +20,34 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     } else {
       this.redis = new Redis(redisOrOptions as RedisOptions);
     }
+
+    this._scriptSrc = this.getScriptSrc();
   }
 
-  async getRecord(key: string): Promise<number[]> {
-    const setMembers = await this.redis.smembers(key);
-    const now = Date.now();
-
-    // Clean expired members manually (to avoid extra memory usage)
-    const expiredMembers = setMembers.filter((m: string) => parseInt(m) < now);
-    if (expiredMembers.length) {
-      await this.redis.srem(key, expiredMembers);
-    }
-
-    return setMembers
-      .filter((m: string) => parseInt(m) > now)
-      .map((m: string) => parseInt(m))
-      .sort();
+  private getScriptSrc(): string {
+    return `
+      local totalHits = redis.call("INCR", KEYS[1])
+      local timeToExpire = redis.call("PTTL", KEYS[1])
+      if timeToExpire <= 0
+        then
+          redis.call("PEXPIRE", KEYS[1], tonumber(ARGV[1]))
+          timeToExpire = tonumber(ARGV[1])
+        end
+      return { totalHits, timeToExpire }
+    `.replace(/^\s+/gm, "").trim();
   }
 
-  async addRecord(key: string, ttl: number): Promise<void> {
-    // add expiration timestamp to the set, and move set expiration forward
-    const multi = this.redis.multi();
-    multi.sadd(key, Date.now() + ttl * 1000);
-    multi.expire(key, ttl);
-    await multi.exec();
+  async addRecord(key: string, ttl: number): Promise<{ totalHits: number, timeToExpire: number }> {
+    // Use EVAL instead of EVALSHA to support redis instances and clusters.
+    const results: number[] = await this.redis.call(
+      'EVAL',
+      this._scriptSrc,
+      1,
+      key,
+      ttl * 1000,
+    ) as number[];
+    const [ totalHits, timeToExpire ] = results;
+    return { totalHits, timeToExpire };
   }
 
   onModuleDestroy() {
