@@ -16,4 +16,10 @@ export class LimitController {
   getHigher() {
     return this.appService.success();
   }
+
+  @Throttle(3, 10)
+  @Get('flooded')
+  getFlooded() {
+    return this.appService.success();
+  }
 }

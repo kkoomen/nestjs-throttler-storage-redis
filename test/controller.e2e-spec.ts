@@ -14,7 +14,7 @@ import { cluster } from './utility/redis-cluster';
 async function flushdb(redisOrCluster: Redis | Cluster) {
   if (redisOrCluster instanceof Redis) {
     await redisOrCluster.flushall();
-  } else {
+  } else { // cluster instance
     await Promise.all(
       redisOrCluster.nodes('master').map(function (node) {
         return node.flushall();
@@ -24,18 +24,18 @@ async function flushdb(redisOrCluster: Redis | Cluster) {
 }
 
 describe.each`
-  instance   | instanceType
-  ${redis}   | ${'single'}
-  ${cluster} | ${'cluster'}
+instance   | instanceType
+${redis}   | ${'single'}
+${cluster} | ${'cluster'}
 `('Redis $instanceType instance', ({ instance: redisOrCluster }: { instance: Redis | Cluster }) => {
   afterAll(async () => {
     await redisOrCluster.quit();
   });
 
   describe.each`
-    adapter                 | adapterName
-    ${new ExpressAdapter()} | ${'Express'}
-    ${new FastifyAdapter()} | ${'Fastify'}
+  adapter                 | adapterName
+  ${new ExpressAdapter()} | ${'Express'}
+  ${new FastifyAdapter()} | ${'Fastify'}
   `('$adapterName Throttler', ({ adapter }: { adapter: AbstractHttpAdapter }) => {
     let app: INestApplication;
 
@@ -111,9 +111,9 @@ describe.each`
        */
       describe('LimitController', () => {
         it.each`
-          method   | url          | limit
-          ${'GET'} | ${''}        | ${2}
-          ${'GET'} | ${'/higher'} | ${5}
+        method   | url          | limit
+        ${'GET'} | ${''}        | ${2}
+        ${'GET'} | ${'/higher'} | ${5}
         `(
           '$method $url',
           async ({ method, url, limit }: { method: 'GET'; url: string; limit: number }) => {
@@ -134,6 +134,29 @@ describe.each`
             expect(errRes.status).toBe(429);
           },
         );
+
+        it('GET /flooded', async () => {
+          // Try to flood an endpoint with a lot of requests and check if no
+          // more than the given limit are able to bypass.
+          const limit = 3;
+          for (let i = 0; i < 200; i++) {
+            const response = await httPromise(appUrl + '/limit/flooded', 'GET');
+            if (i < limit) {
+              expect(response.data).toEqual({ success: true });
+              expect(response.headers).toMatchObject({
+                'x-ratelimit-limit': limit.toString(),
+                'x-ratelimit-remaining': (limit - (i + 1)).toString(),
+                'x-ratelimit-reset': /\d+/,
+              });
+            } else {
+              expect(response.data).toMatchObject({ statusCode: 429, message: /ThrottlerException/ });
+              expect(response.headers).toMatchObject({
+                'retry-after': /\d+/,
+              });
+              expect(response.status).toBe(429);
+            }
+          }
+        });
       });
       /**
        * Tests for setting throttle values at the `forRoot` level
