@@ -1,4 +1,5 @@
 import { Injectable, OnModuleDestroy } from '@nestjs/common';
+import { ThrottlerStorageRecord } from '@nestjs/throttler/dist/throttler-storage-record.interface';
 import Redis, { Cluster, RedisOptions } from 'ioredis';
 import { ThrottlerStorageRedis } from './throttler-storage-redis.interface';
 
@@ -39,7 +40,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     `.replace(/^\s+/gm, '').trim();
   }
 
-  async addRecord(key: string, ttl: number): Promise<{ totalHits: number, timeToExpire: number }> {
+  async increment(key: string, ttl: number): Promise<ThrottlerStorageRecord> {
     // Use EVAL instead of EVALSHA to support both redis instances and clusters.
     const results: number[] = await this.redis.call(
       'EVAL',
