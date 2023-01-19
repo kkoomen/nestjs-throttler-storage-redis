@@ -1244,10 +1244,10 @@
   dependencies:
     tslib "2.4.1"
 
-"@nestjs/throttler@>=2.0.0":
-  version "3.1.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-3.1.0.tgz#767b5fd8225be9e026576161d834b08bd7629e61"
-  integrity sha512-u9a5+rci6ybYtJ2is6gZWxE2dMZEpnK0qJ0C1OnchuNCvM21Bg6qym1TB6Uihhci+JfTv6E15WuASLXcIclsbA==
+"@nestjs/throttler@^4.0.0":
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-4.0.0.tgz#9f9c66df62da6ec1b1ad4305e6a3865676e3812f"
+  integrity sha512-2T2S/hFhxROa/PZRZhHWFkrukxg3T8Db32Y04m6U6j6N2XqFGSKXhjfIbORO8kk/S2jswa9oTX/K12E120tgaQ==
   dependencies:
     md5 "^2.2.1"
 
