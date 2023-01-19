@@ -14,7 +14,8 @@ import { cluster } from './utility/redis-cluster';
 async function flushdb(redisOrCluster: Redis | Cluster) {
   if (redisOrCluster instanceof Redis) {
     await redisOrCluster.flushall();
-  } else { // cluster instance
+  } else {
+    // cluster instance
     await Promise.all(
       redisOrCluster.nodes('master').map(function (node) {
         return node.flushall();
@@ -24,18 +25,18 @@ async function flushdb(redisOrCluster: Redis | Cluster) {
 }
 
 describe.each`
-instance   | instanceType
-${redis}   | ${'single'}
-${cluster} | ${'cluster'}
+  instance   | instanceType
+  ${redis}   | ${'single'}
+  ${cluster} | ${'cluster'}
 `('Redis $instanceType instance', ({ instance: redisOrCluster }: { instance: Redis | Cluster }) => {
   afterAll(async () => {
     await redisOrCluster.quit();
   });
 
   describe.each`
-  adapter                 | adapterName
-  ${new ExpressAdapter()} | ${'Express'}
-  ${new FastifyAdapter()} | ${'Fastify'}
+    adapter                 | adapterName
+    ${new ExpressAdapter()} | ${'Express'}
+    ${new FastifyAdapter()} | ${'Fastify'}
   `('$adapterName Throttler', ({ adapter }: { adapter: AbstractHttpAdapter }) => {
     let app: INestApplication;
 
@@ -111,9 +112,9 @@ ${cluster} | ${'cluster'}
        */
       describe('LimitController', () => {
         it.each`
-        method   | url          | limit
-        ${'GET'} | ${''}        | ${2}
-        ${'GET'} | ${'/higher'} | ${5}
+          method   | url          | limit
+          ${'GET'} | ${''}        | ${2}
+          ${'GET'} | ${'/higher'} | ${5}
         `(
           '$method $url',
           async ({ method, url, limit }: { method: 'GET'; url: string; limit: number }) => {
@@ -149,7 +150,10 @@ ${cluster} | ${'cluster'}
                 'x-ratelimit-reset': /^\d+$/,
               });
             } else {
-              expect(response.data).toMatchObject({ statusCode: 429, message: /ThrottlerException/ });
+              expect(response.data).toMatchObject({
+                statusCode: 429,
+                message: /ThrottlerException/,
+              });
               expect(response.headers).toMatchObject({
                 'retry-after': /^\d+$/,
               });

@@ -37,18 +37,20 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
           timeToExpire = tonumber(ARGV[1])
         end
       return { totalHits, timeToExpire }
-    `.replace(/^\s+/gm, '').trim();
+    `
+      .replace(/^\s+/gm, '')
+      .trim();
   }
 
   async increment(key: string, ttl: number): Promise<ThrottlerStorageRecord> {
     // Use EVAL instead of EVALSHA to support both redis instances and clusters.
-    const results: number[] = await this.redis.call(
+    const results: number[] = (await this.redis.call(
       'EVAL',
       this.scriptSrc,
       1,
       key,
       ttl * 1000,
-    ) as number[];
+    )) as number[];
 
     if (!Array.isArray(results)) {
       throw new TypeError(`Expected result to be array of values, got ${results}`);
@@ -58,7 +60,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       throw new Error(`Expected 2 values, got ${results.length}`);
     }
 
-    const [ totalHits, timeToExpire ] = results;
+    const [totalHits, timeToExpire] = results;
 
     if (typeof totalHits !== 'number') {
       throw new TypeError('Expected totalHits to be a number');

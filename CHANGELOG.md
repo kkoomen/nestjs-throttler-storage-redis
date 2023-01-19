@@ -1,3 +1,19 @@
+# [0.3.0](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.2.2...v0.3.0) (2023-01-19)
+
+
+### Bug Fixes
+
+* adjust logic to improve speed which resolves bypassing throttle limits (fixes [#1064](https://github.com/kkoomen/nestjs-throttler-storage-redis/issues/1064)) ([6f24cad](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/6f24cad77ad7fcfe07e0898938a6740a80eec899)), closes [nestjs/throttler#1304](https://github.com/nestjs/throttler/issues/1304)
+* put redis-cluster in separate file so it does not get initialized ([12292f5](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/12292f5acf16334317e0318e833f7c50bb6f57ef))
+
+
+### Features
+
+* only use single redis instance controller ([c113fb8](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/c113fb8733d73308c4a7562d41bb21795b44ed78))
+* upgrade @nestjs/throttler to 4.0.0 along with required local changes for this ([3a1e31e](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/3a1e31e484b987f8d5f0dc28fb81cba1e2153ab3))
+
+
+
 ## [0.2.2](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.2.1...v0.2.2) (2022-12-23)
 
 
