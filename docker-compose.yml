@@ -7,6 +7,8 @@ services:
       - '6379:6379'
 
   redis_cluster:
+    volumes:
+      - './sentinel.conf:/redis/sentinel.conf'
     image: grokzen/redis-cluster
     environment:
       - 'IP=0.0.0.0'
