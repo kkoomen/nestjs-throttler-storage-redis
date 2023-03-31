@@ -20,11 +20,11 @@ jobs:
       - name: Check running containers
         run: docker ps -a
       - name: Check docker logs
-        run: docker logs redis && docker logs redis_cluster
+        run: sleep 15 && docker logs redis && docker logs redis_cluster
       - name: Setup NodeJS v${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
       - run: yarn install
       - run: yarn run lint
-      - run: yarn run test:e2e
+      - run: DEBUG="ioredis:*" yarn run test:e2e
