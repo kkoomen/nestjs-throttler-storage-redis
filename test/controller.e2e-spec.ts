@@ -5,11 +5,11 @@ import { FastifyAdapter } from '@nestjs/platform-fastify';
 import { Test, TestingModule } from '@nestjs/testing';
 import { ThrottlerGuard } from '@nestjs/throttler';
 import Redis, { Cluster } from 'ioredis';
-import { ClusterControllerModule } from './app/controllers/cluster-controller.module';
+// import { ClusterControllerModule } from './app/controllers/cluster-controller.module';
 import { ControllerModule } from './app/controllers/controller.module';
 import { httPromise } from './utility/httpromise';
 import { redis } from './utility/redis';
-import { cluster } from './utility/redis-cluster';
+// import { cluster } from './utility/redis-cluster';
 
 async function flushdb(redisOrCluster: Redis | Cluster) {
   if (redisOrCluster instanceof Redis) {
@@ -52,11 +52,11 @@ describe.each`
         ],
       };
 
-      if (redisOrCluster instanceof Cluster) {
-        config.imports.push(ClusterControllerModule);
-      } else {
+      // if (redisOrCluster instanceof Cluster) {
+      //   config.imports.push(ClusterControllerModule);
+      // } else {
         config.imports.push(ControllerModule);
-      }
+      // }
 
       const moduleFixture: TestingModule = await Test.createTestingModule(config).compile();
       app = moduleFixture.createNestApplication(adapter);
