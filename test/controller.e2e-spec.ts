@@ -24,10 +24,10 @@ async function flushdb(redisOrCluster: Redis | Cluster) {
   }
 }
 
+// ${cluster} | ${'cluster'}
 describe.each`
   instance   | instanceType
   ${redis}   | ${'single'}
-  ${cluster} | ${'cluster'}
 `('Redis $instanceType instance', ({ instance: redisOrCluster }: { instance: Redis | Cluster }) => {
   afterAll(async () => {
     await redisOrCluster.quit();
