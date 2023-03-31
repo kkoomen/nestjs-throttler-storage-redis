@@ -20,7 +20,7 @@ jobs:
       - name: Check running containers
         run: docker ps -a
       - name: Check docker logs
-        run: docker logs redis
+        run: docker logs redis && docker logs redis_cluster
       - name: Setup NodeJS v${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:

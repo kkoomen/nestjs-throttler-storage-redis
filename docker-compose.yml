@@ -6,12 +6,13 @@ services:
     ports:
       - '6379:6379'
 
-  # redis_cluster:
-  #   volumes:
-  #     - './sentinel.conf:/redis/sentinel.conf'
-  #   image: grokzen/redis-cluster
-  #   environment:
-  #     - 'IP=0.0.0.0'
-  #   ports:
-  #     - '7000-7050:7000-7050'
-  #     - '5000-5010:5000-5010'
+  redis_cluster:
+    container_name: redis_cluster
+    volumes:
+      - './sentinel.conf:/redis/sentinel.conf'
+    image: grokzen/redis-cluster
+    environment:
+      - 'IP=0.0.0.0'
+    ports:
+      - '7000-7050:7000-7050'
+      - '5000-5010:5000-5010'
