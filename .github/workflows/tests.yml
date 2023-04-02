@@ -15,8 +15,6 @@ jobs:
         node-version: [16]
     steps:
       - uses: actions/checkout@v2
-      - name: Build docker containers
-        run: docker-compose build --build-arg "redis_version=7.0.7" redis-cluster
       - name: Initiate docker containers
         run: docker-compose -f docker-compose.yml up -d
       - name: Check running containers
