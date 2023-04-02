@@ -1257,13 +1257,13 @@
     md5 "^2.2.1"
 
 "@nestjs/websockets@>=7.0.0":
-  version "9.3.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-9.3.1.tgz#755c0ba0a0da2f7a273dfeb5ddb1d81ddac231f8"
-  integrity sha512-LHIJib+Mb8grjLA5NjFh/V6mttgia9mfWmx1waCAKCOBHXMwzaMkkcM63WvqsmmvyE3d2NbL8+j/sUJY2zBlPA==
+  version "9.3.12"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-9.3.12.tgz#684e582dda72d45574dc235d8b8ab86c37ddf87c"
+  integrity sha512-DB0HubjjzOgoPrBdCt2MHhAc3OKBQSODdDhx336TVTGZt5utYV6rLNSaGShWK696fk0fuyLSBImT9PE7igh9tQ==
   dependencies:
     iterare "1.2.1"
     object-hash "3.0.0"
-    tslib "2.4.1"
+    tslib "2.5.0"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
