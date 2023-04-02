@@ -7,6 +7,7 @@ services:
       - '6379:6379'
 
   redis_cluster:
+    container_name: redis_cluster
     volumes:
       - './sentinel.conf:/redis/sentinel.conf'
     image: grokzen/redis-cluster
