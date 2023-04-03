@@ -10,7 +10,7 @@ services:
     container_name: redis_cluster
     volumes:
       - './sentinel.conf:/redis/sentinel.conf'
-    image: grokzen/redis-cluster
+    image: grokzen/redis-cluster:6.2.10
     environment:
       - 'IP=0.0.0.0'
     ports:
