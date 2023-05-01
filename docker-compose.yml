@@ -8,7 +8,7 @@ services:
 
   redis_cluster:
     container_name: redis_cluster
-    image: grokzen/redis-cluster:6.2.10
+    image: grokzen/redis-cluster:7.0.10
     environment:
       - 'IP=0.0.0.0'
     ports:
