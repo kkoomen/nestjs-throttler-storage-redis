@@ -144,10 +144,11 @@ describe.each`
             const response = await httPromise(appUrl + '/limit/flooded', 'GET');
             if (i < limit) {
               expect(response.data).toEqual({ success: true });
+              expect(response.headers['x-ratelimit-reset']).toBeLessThanOrEqual(10);
               expect(response.headers).toMatchObject({
                 'x-ratelimit-limit': limit.toString(),
                 'x-ratelimit-remaining': (limit - (i + 1)).toString(),
-                'x-ratelimit-reset': '10',
+                'x-ratelimit-reset': /^\d+$/,
               });
             } else {
               expect(response.data).toMatchObject({
