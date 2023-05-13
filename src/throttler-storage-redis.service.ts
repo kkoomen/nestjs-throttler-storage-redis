@@ -70,7 +70,10 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       throw new TypeError('Expected timeToExpire to be a number');
     }
 
-    return { totalHits, timeToExpire };
+    return {
+      totalHits,
+      timeToExpire: Math.ceil(timeToExpire / 1000),
+    };
   }
 
   onModuleDestroy() {

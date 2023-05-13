@@ -83,7 +83,7 @@ describe.each`
           expect(response.headers).not.toMatchObject({
             'x-ratelimit-limit': '2',
             'x-ratelimit-remaining': '1',
-            'x-ratelimit-reset': /^\d+$/,
+            'x-ratelimit-reset': '10',
           });
         });
         it('GET /ignore-user-agents', async () => {
@@ -94,7 +94,7 @@ describe.each`
           expect(response.headers).not.toMatchObject({
             'x-ratelimit-limit': '2',
             'x-ratelimit-remaining': '1',
-            'x-ratelimit-reset': /^\d+$/,
+            'x-ratelimit-reset': '10',
           });
         });
         it('GET /', async () => {
@@ -103,7 +103,7 @@ describe.each`
           expect(response.headers).toMatchObject({
             'x-ratelimit-limit': '2',
             'x-ratelimit-remaining': '1',
-            'x-ratelimit-reset': /^\d+$/,
+            'x-ratelimit-reset': '10',
           });
         });
       });
@@ -124,13 +124,13 @@ describe.each`
               expect(response.headers).toMatchObject({
                 'x-ratelimit-limit': limit.toString(),
                 'x-ratelimit-remaining': (limit - (i + 1)).toString(),
-                'x-ratelimit-reset': /^\d+$/,
+                'x-ratelimit-reset': '10',
               });
             }
             const errRes = await httPromise(appUrl + '/limit' + url, method);
             expect(errRes.data).toMatchObject({ statusCode: 429, message: /ThrottlerException/ });
             expect(errRes.headers).toMatchObject({
-              'retry-after': /^\d+$/,
+              'retry-after': '10',
             });
             expect(errRes.status).toBe(429);
           },
@@ -147,7 +147,7 @@ describe.each`
               expect(response.headers).toMatchObject({
                 'x-ratelimit-limit': limit.toString(),
                 'x-ratelimit-remaining': (limit - (i + 1)).toString(),
-                'x-ratelimit-reset': /^\d+$/,
+                'x-ratelimit-reset': '10',
               });
             } else {
               expect(response.data).toMatchObject({
@@ -155,7 +155,7 @@ describe.each`
                 message: /ThrottlerException/,
               });
               expect(response.headers).toMatchObject({
-                'retry-after': /^\d+$/,
+                'retry-after': '10',
               });
               expect(response.status).toBe(429);
             }
@@ -172,7 +172,7 @@ describe.each`
           expect(response.headers).toMatchObject({
             'x-ratelimit-limit': '5',
             'x-ratelimit-remaining': '4',
-            'x-ratelimit-reset': /^\d+$/,
+            'x-ratelimit-reset': '60',
           });
         });
       });
