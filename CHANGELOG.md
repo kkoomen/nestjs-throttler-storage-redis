@@ -1,3 +1,5 @@
+## [0.3.2](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.1...v0.3.2) (2023-05-13)
+
 ## [0.3.1](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.0...v0.3.1) (2023-05-13)
 
 ### Bug Fixes
