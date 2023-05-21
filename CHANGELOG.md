@@ -1,3 +1,9 @@
+## [0.3.3](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.2...v0.3.3) (2023-05-21)
+
+### Bug Fixes
+
+- added back disconnectRequired flag assignment ([bd5587a](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/bd5587adfc7aeeef41518f5c49bc4c745365fefb))
+
 ## [0.3.2](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.1...v0.3.2) (2023-05-13)
 
 ## [0.3.1](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.0...v0.3.1) (2023-05-13)
