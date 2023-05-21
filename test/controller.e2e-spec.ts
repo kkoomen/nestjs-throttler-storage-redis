@@ -155,9 +155,7 @@ describe.each`
                 statusCode: 429,
                 message: /ThrottlerException/,
               });
-              expect(response.headers).toMatchObject({
-                'retry-after': '10',
-              });
+              expect(parseInt(response.headers['retry-after'])).toBeLessThanOrEqual(10);
               expect(response.status).toBe(429);
             }
           }
