@@ -18,8 +18,10 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       this.redis = redisOrOptions;
     } else if (typeof redisOrOptions === 'string') {
       this.redis = new Redis(redisOrOptions as string);
+      this.disconnectRequired = true;
     } else {
       this.redis = new Redis(redisOrOptions as RedisOptions);
+      this.disconnectRequired = true;
     }
 
     this.scriptSrc = this.getScriptSrc();
