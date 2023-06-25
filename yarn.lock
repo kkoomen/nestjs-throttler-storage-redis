@@ -1121,13 +1121,13 @@
     md5 "^2.2.1"
 
 "@nestjs/websockets@>=9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-9.4.1.tgz#c232d7250d1b8a1703b56daf8e7c4e04cd385446"
-  integrity sha512-W9w13MJnTyrq4/eh0Est142lyweQkVbFHuQ5rmcPGEtT5Gtn/YJzxO8Rct4aqDqy5GSwuH2ji8sibMCAzRRalQ==
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-9.4.3.tgz#0584a66bd4bc1563b0cb18a141d4a565397eddaf"
+  integrity sha512-LMLKJWZbWH3VQRxDK/658ynyN1n5lLCIen/dey2y5TzB0RNgxlSso/YJATVVfWNaT2CxPG8TUQMOTdopXCWGQw==
   dependencies:
     iterare "1.2.1"
     object-hash "3.0.0"
-    tslib "2.5.0"
+    tslib "2.5.3"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
