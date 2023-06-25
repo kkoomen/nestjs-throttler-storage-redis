@@ -1107,11 +1107,11 @@
     pluralize "8.0.0"
 
 "@nestjs/testing@>=9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-9.4.1.tgz#46e914cbe2074c929ae45de50b4d78c520f34ada"
-  integrity sha512-DErwymDxsY80dH2v3eZDVOhjDv6oY6YsaI3GnUEU+gUrYa8qxxKPHfOofAsFF7SExfeJo5c8RQRfazW3bQupJA==
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/testing/-/testing-9.4.3.tgz#53ffbabdd38f500b145c30f2fbb76dedad393d79"
+  integrity sha512-LDT8Ai2eKnTzvnPaJwWOK03qTaFap5uHHsJCv6dL0uKWk6hyF9jms8DjyVaGsaujCaXDG8izl1mDEER0OmxaZA==
   dependencies:
-    tslib "2.5.0"
+    tslib "2.5.3"
 
 "@nestjs/throttler@^4.0.0":
   version "4.0.0"
