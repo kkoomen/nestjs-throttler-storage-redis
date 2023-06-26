@@ -1089,11 +1089,11 @@
     tslib "2.5.3"
 
 "@nestjs/platform-ws@>=9.4.1":
-  version "9.4.1"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-9.4.1.tgz#bd87aa0a008a48a9898b779dccab5d95922102ae"
-  integrity sha512-TnQ9W+h3VwsFcLscgXI9dFBPlCEOc3tRYd/rk8PxGmrZsBPg+LI4bXmKdl3gvK1ezIk3/nI8XBK35J27z41/Qg==
+  version "9.4.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-9.4.3.tgz#9edb2ad9b2952c7010a741779ff727a134c897cb"
+  integrity sha512-JK0wrPlV0vbU+H+ISrj0+APFzVmtb7lX5X3NZgW99kevusSkwkfmya9jzQwWh7fe0ErgYZISvmxkb3PuyhDOlw==
   dependencies:
-    tslib "2.5.0"
+    tslib "2.5.3"
     ws "8.13.0"
 
 "@nestjs/schematics@>=9.2.0", "@nestjs/schematics@^9.0.4":
