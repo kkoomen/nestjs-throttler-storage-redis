@@ -1,5 +1,5 @@
 import { Module } from '@nestjs/common';
-import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerModule, seconds } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from '../../../src';
 import { redis } from '../../utility/redis';
 import { AppService } from '../app.service';
@@ -10,7 +10,7 @@ import { LimitController } from './limit.controller';
 @Module({
   imports: [
     ThrottlerModule.forRoot({
-      throttlers: [{ limit: 5, ttl: 60000 }],
+      throttlers: [{ limit: 5, ttl: seconds(60) }],
       ignoreUserAgents: [/throttler-test/g],
       storage: new ThrottlerStorageRedisService(redis),
     }),
