@@ -1,6 +1,6 @@
 {
   "name": "nestjs-throttler-storage-redis",
-  "version": "0.3.3",
+  "version": "0.3.2",
   "description": "Redis storage provider for the @nestjs/throttler package",
   "author": "Kim 金可明 <koomen@pm.me>",
   "keywords": [
@@ -84,7 +84,7 @@
   "peerDependencies": {
     "@nestjs/common": ">=10.2.4",
     "@nestjs/core": ">=10.2.4",
-    "@nestjs/throttler": ">=5.0.0",
+    "@nestjs/throttler": ">=4.0.0",
     "ioredis": "^5.3.2",
     "reflect-metadata": "^0.1.13"
   },
