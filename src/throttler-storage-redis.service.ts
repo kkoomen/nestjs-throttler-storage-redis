@@ -51,7 +51,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       this.scriptSrc,
       1,
       key,
-      ttl * 1000,
+      ttl,
     )) as number[];
 
     if (!Array.isArray(results)) {

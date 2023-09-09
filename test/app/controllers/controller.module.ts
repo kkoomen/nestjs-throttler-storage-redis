@@ -10,8 +10,7 @@ import { LimitController } from './limit.controller';
 @Module({
   imports: [
     ThrottlerModule.forRoot({
-      limit: 5,
-      ttl: 60,
+      throttlers: [{ limit: 5, ttl: 60000 }],
       ignoreUserAgents: [/throttler-test/g],
       storage: new ThrottlerStorageRedisService(redis),
     }),

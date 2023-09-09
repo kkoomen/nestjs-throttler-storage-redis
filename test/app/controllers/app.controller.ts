@@ -3,7 +3,7 @@ import { SkipThrottle, Throttle } from '@nestjs/throttler';
 import { AppService } from '../app.service';
 
 @Controller()
-@Throttle(2, 10)
+@Throttle({ default: { limit: 2, ttl: 10000 } })
 export class AppController {
   constructor(private readonly appService: AppService) {}
 
