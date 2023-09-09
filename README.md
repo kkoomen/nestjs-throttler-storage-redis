@@ -1,6 +1,7 @@
 # NestJS Throttler Redis Storage
 
 ![Tests status](https://img.shields.io/github/actions/workflow/status/kkoomen/nestjs-throttler-storage-redis/tests.yml?branch=master)
+[![npm](https://img.shields.io/npm/v/nestjs-throttler-storage-redis)](https://www.npmjs.com/package/nestjs-throttler-storage-redis)
 
 Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/throttler) package.
 
@@ -19,15 +20,14 @@ Redis storage provider for the [@nestjs/throttler](https://github.com/nestjs/thr
 Basic usage:
 
 ```ts
-import { ThrottlerModule } from '@nestjs/throttler';
+import { ThrottlerModule, seconds } from '@nestjs/throttler';
 import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
 import Redis from 'ioredis';
 
 @Module({
   imports: [
     ThrottlerModule.forRoot({
-      ttl: 60,
-      limit: 5,
+      throttlers: [{ limit: 5, ttl: seconds(60) }],
 
       // Below are possible options on how to configure the storage service.
 

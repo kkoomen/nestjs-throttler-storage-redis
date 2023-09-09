@@ -1,3 +1,19 @@
+# [0.4.0](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.3...v0.4.0) (2023-09-09)
+
+### Features
+
+- update all packages ([f6e52ad](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/f6e52ad4579185d248aea876e7cad92f88cdbba3))
+- use seconds() throttler helper function ([f3a3df9](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/f3a3df99241f450fc9cecb6b2f4cea8d0b49ee81))
+- use throttler v5 ([bd96544](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/bd96544ad6fe6c5b77eb5ad2ce8ff66ee5a09f29))
+
+# [0.4.0](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.3...v0.4.0) (2023-09-09)
+
+### Features
+
+- update all packages ([f6e52ad](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/f6e52ad4579185d248aea876e7cad92f88cdbba3))
+- use seconds() throttler helper function ([f3a3df9](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/f3a3df99241f450fc9cecb6b2f4cea8d0b49ee81))
+- use throttler v5 ([bd96544](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/bd96544ad6fe6c5b77eb5ad2ce8ff66ee5a09f29))
+
 ## [0.3.3](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.3.2...v0.3.3) (2023-05-21)
 
 ### Bug Fixes
