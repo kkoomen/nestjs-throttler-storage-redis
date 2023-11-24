@@ -60,8 +60,12 @@ import { ThrottlerStorageRedisService } from 'nestjs-throttler-storage-redis';
       imports: [ConfigModule],
       inject: [ConfigService],
       useFactory: (config: ConfigService) => ({
-        ttl: config.get('THROTTLE_TTL'),
-        limit: config.get('THROTTLE_LIMIT'),
+        throttlers: [
+          {
+            ttl: config.get('THROTTLE_TTL'),
+            limit: config.get('THROTTLE_LIMIT'),
+          },
+        ],
         storage: new ThrottlerStorageRedisService(),
       }),
     }),
