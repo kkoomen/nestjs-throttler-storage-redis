@@ -1125,9 +1125,9 @@
     tslib "2.6.2"
 
 "@nestjs/platform-ws@>=10.2.4":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-10.2.8.tgz#136f84fceba43a5f47f31e697e490f67c4c531a4"
-  integrity sha512-1+EUeN0qE5e8SEreb7w1BJ+4I77l+CaIXQiRegSNv/LCiIG6VBdx7gLzgKFRiV7tyny8wSuSMO+PxIDXbxB6Sw==
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-10.2.10.tgz#d6a4df6bebcf85e27fd437cf764d29921a924889"
+  integrity sha512-x9L7jixAEtbNjP9hIm9Fmx+kL9ruFQLu2cUb0EdSNtwK/efAJZ3+Taz9T8g/Nm5DG4k0356X6hmRk74ChJHg9g==
   dependencies:
     tslib "2.6.2"
     ws "8.14.2"
