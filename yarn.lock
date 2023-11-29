@@ -629,10 +629,10 @@
     ajv-formats "^2.1.1"
     fast-uri "^2.0.0"
 
-"@fastify/cors@8.4.0":
-  version "8.4.0"
-  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-8.4.0.tgz#dc518a5c147141e21d2dd47108ec9ab0bb9b821c"
-  integrity sha512-MlVvMTenltToByTpLwlWtO+7dQ3l2J+1OpmGrx9JpSNWo1d+dhfNCOi23zHhxdFhtpDzfwGwCsKu9DTeG7k7nQ==
+"@fastify/cors@8.4.1":
+  version "8.4.1"
+  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-8.4.1.tgz#bd8fece8e175a20059a4c6552f0e7de9e94eafa0"
+  integrity sha512-iYQJtrY3pFiDS5mo5zRaudzg2OcUdJ96PD6xfkKOOEilly5nnrFZx/W6Sce2T79xxlEn2qpU3t5+qS2phS369w==
   dependencies:
     fastify-plugin "^4.0.0"
     mnemonist "0.39.5"
@@ -1104,11 +1104,11 @@
     tslib "2.6.2"
 
 "@nestjs/platform-fastify@>=10.2.4":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-10.2.8.tgz#15986e6a1962bdf991b23565aeefdd357ace23e5"
-  integrity sha512-ZeqIHeGLD7YgJ22K9AkyjcFv/yH/LH+HmujukBq/yDLFlJuurKCgbDPfL0PHq0RRMZu5CeB0dhs8+qihw96yjA==
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-10.2.10.tgz#6dca8db5623d22a422b83090f388891ef7305b3c"
+  integrity sha512-OGxoLC3mjTPdreE3ooHg6AyXMYdz8m/LDWKr6cssONM5ohtMNcSeexHBFeSx+K4XDyDT3GkspHK+2CSFcphDeA==
   dependencies:
-    "@fastify/cors" "8.4.0"
+    "@fastify/cors" "8.4.1"
     "@fastify/formbody" "7.4.0"
     "@fastify/middie" "8.3.0"
     fastify "4.24.3"
