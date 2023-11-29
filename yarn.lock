@@ -1117,9 +1117,9 @@
     tslib "2.6.2"
 
 "@nestjs/platform-socket.io@>=10.2.4":
-  version "10.2.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-10.2.8.tgz#af0558b6a6da95e05095733c7bb30f8d399d5482"
-  integrity sha512-P/Olw9alAaKD7Q1vS/ol7K81x1l7Bmi+AXthBNUPGMmG/W8kxO1krerW4rEhtF3BKJ0qJIa5bhDlb80p4lZcNA==
+  version "10.2.10"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-socket.io/-/platform-socket.io-10.2.10.tgz#62f1dc8467332850a95260895b4e9dc58c228e3a"
+  integrity sha512-JBuemeIBp2mpp+z7D12oa22k83TnDTxyQDMKZpO/B2/QnBVR+2C4EZ07/XOct14LQXO6vIjmT0iYYCZbNvczjw==
   dependencies:
     socket.io "4.7.2"
     tslib "2.6.2"
