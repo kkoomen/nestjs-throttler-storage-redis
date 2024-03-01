@@ -629,13 +629,13 @@
     ajv-formats "^2.1.1"
     fast-uri "^2.0.0"
 
-"@fastify/cors@8.4.2":
-  version "8.4.2"
-  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-8.4.2.tgz#5a3af71a356def991d49d78fe9982fba504d3d0a"
-  integrity sha512-IVynbcPG9eWiJ0P/A1B+KynmiU/yTYbu3ooBUSIeHfca/N1XLb9nIJVCws+YTr2q63MA8Y6QLeXQczEv4npM9g==
+"@fastify/cors@9.0.1":
+  version "9.0.1"
+  resolved "https://registry.yarnpkg.com/@fastify/cors/-/cors-9.0.1.tgz#9ddb61b4a61e02749c5c54ca29f1c646794145be"
+  integrity sha512-YY9Ho3ovI+QHIL2hW+9X4XqQjXLjJqsU+sMV/xFsxZkE8p3GNnYVFpoOxF7SsP5ZL76gwvbo3V9L+FIekBGU4Q==
   dependencies:
     fastify-plugin "^4.0.0"
-    mnemonist "0.39.5"
+    mnemonist "0.39.6"
 
 "@fastify/deepmerge@^1.0.0":
   version "1.3.0"
@@ -1104,14 +1104,14 @@
     tslib "2.6.2"
 
 "@nestjs/platform-fastify@>=10.2.4":
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-10.3.0.tgz#be99075a1959e23e82ec75c44b717978459ca2ed"
-  integrity sha512-ka4r/cPWM5y/dXoi9dj6pn1o3WLnfImy2bT3aYVasiDsJff2cd3h/ThugwxjdH0BHUpLSPnawEGzADAcO8Fqug==
+  version "10.3.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-fastify/-/platform-fastify-10.3.3.tgz#fcb34187b66e5a6aaea89ff9baef2fec7840134d"
+  integrity sha512-OTKcKGnWWrSk/nDl5bFmv2gcPhbF6nsU/EHxkh6tguc0YY4aopQR9GaodseJn8isEOtZzcx8UUBsnLTtqWKxaA==
   dependencies:
-    "@fastify/cors" "8.4.2"
+    "@fastify/cors" "9.0.1"
     "@fastify/formbody" "7.4.0"
     "@fastify/middie" "8.3.0"
-    fastify "4.25.1"
+    fastify "4.26.0"
     light-my-request "5.11.0"
     path-to-regexp "3.2.0"
     tslib "2.6.2"
@@ -3948,10 +3948,10 @@ fastify-plugin@^4.0.0:
   resolved "https://registry.yarnpkg.com/fastify-plugin/-/fastify-plugin-4.5.1.tgz#44dc6a3cc2cce0988bc09e13f160120bbd91dbee"
   integrity sha512-stRHYGeuqpEZTL1Ef0Ovr2ltazUT9g844X5z/zEBFLG8RYlpDiOCIG+ATvYEp+/zmc7sN29mcIMp8gvYplYPIQ==
 
-fastify@4.25.1:
-  version "4.25.1"
-  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.25.1.tgz#7070ec392f168be9f08d0ac30f819ce1d076dbc8"
-  integrity sha512-D8d0rv61TwqoAS7lom2tvIlgVMlx88lLsiwXyWNjA7CU/LC/mx/Gp2WAlC0S/ABq19U+y/aRvYFG5xLUu2aMrg==
+fastify@4.26.0:
+  version "4.26.0"
+  resolved "https://registry.yarnpkg.com/fastify/-/fastify-4.26.0.tgz#d32ad76e31bfc451230abfa2f3834c107573776f"
+  integrity sha512-Fq/7ziWKc6pYLYLIlCRaqJqEVTIZ5tZYfcW/mDK2AQ9v/sqjGFpj0On0/7hU50kbPVjLO4de+larPA1WwPZSfw==
   dependencies:
     "@fastify/ajv-compiler" "^3.5.0"
     "@fastify/error" "^3.4.0"
@@ -3960,7 +3960,7 @@ fastify@4.25.1:
     avvio "^8.2.1"
     fast-content-type-parse "^1.1.0"
     fast-json-stringify "^5.8.0"
-    find-my-way "^7.7.0"
+    find-my-way "^8.0.0"
     light-my-request "^5.11.0"
     pino "^8.17.0"
     process-warning "^3.0.0"
@@ -4018,10 +4018,10 @@ finalhandler@1.2.0:
     statuses "2.0.1"
     unpipe "~1.0.0"
 
-find-my-way@^7.7.0:
-  version "7.7.0"
-  resolved "https://registry.yarnpkg.com/find-my-way/-/find-my-way-7.7.0.tgz#d7b51ca6046782bcddd5a8435e99ad057e5a8876"
-  integrity sha512-+SrHpvQ52Q6W9f3wJoJBbAQULJuNEEQwBvlvYwACDhBTLOTMiQ0HYWh4+vC3OivGP2ENcTI1oKlFA2OepJNjhQ==
+find-my-way@^8.0.0:
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/find-my-way/-/find-my-way-8.1.0.tgz#cc05e8e4b145322299d0de0a839b5be528c2083e"
+  integrity sha512-41QwjCGcVTODUmLLqTMeoHeiozbMXYMAE1CKFiDyi9zVZ2Vjh0yz3MF0WQZoIb+cmzP/XlbFjlF2NtJmvZHznA==
   dependencies:
     fast-deep-equal "^3.1.3"
     fast-querystring "^1.0.0"
@@ -5988,10 +5988,10 @@ mkdirp@^0.5.4:
   dependencies:
     minimist "^1.2.6"
 
-mnemonist@0.39.5:
-  version "0.39.5"
-  resolved "https://registry.yarnpkg.com/mnemonist/-/mnemonist-0.39.5.tgz#5850d9b30d1b2bc57cc8787e5caa40f6c3420477"
-  integrity sha512-FPUtkhtJ0efmEFGpU14x7jGbTB+s18LrzRL2KgoWz9YvcY3cPomz8tih01GbHwnGk/OmkOKfqd/RAQoc8Lm7DQ==
+mnemonist@0.39.6:
+  version "0.39.6"
+  resolved "https://registry.yarnpkg.com/mnemonist/-/mnemonist-0.39.6.tgz#0b3c9b7381d9edf6ce1957e74b25a8ad25732f57"
+  integrity sha512-A/0v5Z59y63US00cRSLiloEIw3t5G+MiKz4BhX21FI+YBJXBOGW0ohFxTxO08dsOYlzxo87T7vGfZKYp2bcAWA==
   dependencies:
     obliterator "^2.0.1"
 
@@ -6755,10 +6755,10 @@ redis-parser@^3.0.0:
   dependencies:
     redis-errors "^1.0.0"
 
-reflect-metadata@^0.1.13:
-  version "0.1.14"
-  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.1.14.tgz#24cf721fe60677146bb77eeb0e1f9dece3d65859"
-  integrity sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==
+reflect-metadata@^0.2.1:
+  version "0.2.1"
+  resolved "https://registry.yarnpkg.com/reflect-metadata/-/reflect-metadata-0.2.1.tgz#8d5513c0f5ef2b4b9c3865287f3c0940c1f67f74"
+  integrity sha512-i5lLI6iw9AU3Uu4szRNPPEkomnkjRTaVt9hy/bn5g/oSzekBSMeLZblcjP74AW0vBabqERLLIrz+gR8QYR54Tw==
 
 regexp.prototype.flags@^1.5.0:
   version "1.5.0"
