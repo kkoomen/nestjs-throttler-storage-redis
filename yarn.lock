@@ -1143,12 +1143,12 @@
     tslib "2.6.2"
 
 "@nestjs/platform-ws@>=10.2.4":
-  version "10.3.0"
-  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-10.3.0.tgz#de31ff49933a3ca3b31daf728264465135707124"
-  integrity sha512-sW5fvWkM0dv0xgJ1TyGeT7WtwI5zFUoce3AOan/YgRhChBM4pjtJRYZdNEOalU0/hMZveHEKBhU7+/wAkc3WAQ==
+  version "10.3.3"
+  resolved "https://registry.yarnpkg.com/@nestjs/platform-ws/-/platform-ws-10.3.3.tgz#3fdbe1207c67834bbe4fbfb63c26f9125b7e4c82"
+  integrity sha512-UMVW0Tai9wPJJakQdNOuSeuHHSbezIzHMiMUa75Nj9oYY1aiNkeN3QZKX2/fHPd6Zu1+RN10V6xayw2HOtn8zA==
   dependencies:
     tslib "2.6.2"
-    ws "8.15.1"
+    ws "8.16.0"
 
 "@nestjs/schematics@>=10.0.2", "@nestjs/schematics@^10.0.1":
   version "10.0.3"
@@ -8094,11 +8094,6 @@ write-file-atomic@^4.0.2:
   dependencies:
     imurmurhash "^0.1.4"
     signal-exit "^3.0.7"
-
-ws@8.15.1:
-  version "8.15.1"
-  resolved "https://registry.yarnpkg.com/ws/-/ws-8.15.1.tgz#271ba33a45ca0cc477940f7f200cd7fba7ee1997"
-  integrity sha512-W5OZiCjXEmk0yZ66ZN82beM5Sz7l7coYxpRkzS+p9PP+ToQry8szKh+61eNktr7EA9DOwvFGhfC605jDHbP6QQ==
 
 ws@8.16.0:
   version "8.16.0"
