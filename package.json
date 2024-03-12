@@ -37,7 +37,7 @@
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s && git add CHANGELOG.md"
   },
   "devDependencies": {
-    "@commitlint/cli": "^17.7.1",
+    "@commitlint/cli": "^19.1.0",
     "@commitlint/config-conventional": "^17.7.0",
     "@nestjs/cli": ">=10.1.17",
     "@nestjs/common": ">=10.2.4",
