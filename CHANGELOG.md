@@ -1,3 +1,9 @@
+## [0.4.4](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.4.3...v0.4.4) (2024-3-20)
+
+### Bug Fixes
+
+- re-add support for redis keyPrefix (closes [#1641](https://github.com/kkoomen/nestjs-throttler-storage-redis/issues/1641)) ([2eea97a](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/2eea97af8c09cd4df2aeb687b5ed3604d36c6554))
+
 ## [0.4.3](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.4.2...v0.4.3) (2024-3-10)
 
 ## [0.4.2](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.4.1...v0.4.2) (2024-2-28)
