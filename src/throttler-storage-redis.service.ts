@@ -50,7 +50,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       'EVAL',
       this.scriptSrc,
       1,
-      key,
+      `${this.redis.options.keyPrefix}${key}`,
       ttl,
     )) as number[];
 
