@@ -1174,9 +1174,9 @@
   integrity sha512-60MqhSLYUqWOgc38P6C6f76JIpf6mVjly7gpuPBCKtVd0p5e8Fq855j7bJuO4/v25vgaOo1OdVs0U1qtgYioGw==
 
 "@nestjs/websockets@>=10.2.4":
-  version "10.3.3"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-10.3.3.tgz#fcb5420027c5968f042e4862bbf85fbe540a4a44"
-  integrity sha512-cR5cB0bLS87vd0iu7Nud/4x2EH1Vs0aIgwGWd0eH/5SAw0rrDNU81PiOde+rnMXETbxvSVfOZuLRyn7/WQtGUg==
+  version "10.3.5"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-10.3.5.tgz#862cea530182ddf5662183635ffe5721c4c39e89"
+  integrity sha512-6w383LUBFHoZ0eFODqEHN2NoIRUwbTd37Hc1KqtZZihhFUzscC/0LMAV20o9LdfS/Xjog5ShNTxvOHuzNBnE4A==
   dependencies:
     iterare "1.2.1"
     object-hash "3.0.0"
