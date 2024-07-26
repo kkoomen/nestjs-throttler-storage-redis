@@ -1168,10 +1168,10 @@
   dependencies:
     tslib "2.6.2"
 
-"@nestjs/throttler@^5.0.0":
-  version "5.1.2"
-  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-5.1.2.tgz#dc65634153c8b887329b1cc6061db2e556517dcb"
-  integrity sha512-60MqhSLYUqWOgc38P6C6f76JIpf6mVjly7gpuPBCKtVd0p5e8Fq855j7bJuO4/v25vgaOo1OdVs0U1qtgYioGw==
+"@nestjs/throttler@^6.0.0":
+  version "6.0.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/throttler/-/throttler-6.0.0.tgz#4f602ce5c584dd21b728eee612baf5d8118bac5f"
+  integrity sha512-2mccn9uCMuDiZBG1c+tIHlNIhkyVJAg167wK66GcNNoj6+6qf8fCOxBZbAHUSyOJeoIxcZAhT9wjJRSXqbWY4w==
 
 "@nestjs/websockets@>=10.2.4":
   version "10.3.8"

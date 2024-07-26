@@ -1,4 +1,4 @@
-import { ThrottlerStorageRecord } from '@nestjs/throttler/dist/throttler-storage-record.interface';
+import { ThrottlerStorage } from '@nestjs/throttler';
 import Redis, { Cluster } from 'ioredis';
 
 export interface ThrottlerStorageRedis {
@@ -11,7 +11,7 @@ export interface ThrottlerStorageRedis {
    * Increment the amount of requests for a given record. The record will
    * automatically be removed from the storage once its TTL has been reached.
    */
-  increment(key: string, ttl: number): Promise<ThrottlerStorageRecord>;
+  increment: ThrottlerStorage['increment'];
 }
 
 export const ThrottlerStorageRedis = Symbol('ThrottlerStorageRedis');
