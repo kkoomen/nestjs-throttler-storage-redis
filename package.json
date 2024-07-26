@@ -1,6 +1,6 @@
 {
   "name": "nestjs-throttler-storage-redis",
-  "version": "0.4.4",
+  "version": "0.5.0",
   "description": "Redis storage provider for the @nestjs/throttler package",
   "author": "Kim 金可明 <koomen@pm.me>",
   "keywords": [

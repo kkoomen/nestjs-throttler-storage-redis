@@ -1,3 +1,9 @@
+# [0.5.0](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.4.4...v0.5.0) (2024-7-26)
+
+### Features
+
+- upgrade @nestjs/throttler to v6, add new throttling features ([7f0784d](https://github.com/kkoomen/nestjs-throttler-storage-redis/commit/7f0784d75cecf29350a24ff902a7c42c23bcdf9d))
+
 ## [0.4.4](https://github.com/kkoomen/nestjs-throttler-storage-redis/compare/v0.4.3...v0.4.4) (2024-3-20)
 
 ### Bug Fixes
