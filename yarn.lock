@@ -1174,13 +1174,13 @@
   integrity sha512-2mccn9uCMuDiZBG1c+tIHlNIhkyVJAg167wK66GcNNoj6+6qf8fCOxBZbAHUSyOJeoIxcZAhT9wjJRSXqbWY4w==
 
 "@nestjs/websockets@>=10.2.4":
-  version "10.3.8"
-  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-10.3.8.tgz#6ed36ccf52e8aad6de53d628ef28fd40e1fa968f"
-  integrity sha512-DTSCK+FYtSTljT6XjVUUZhf1cPxKEJf1AG1y2n+ERnd0vzMpnYpMFgGkDlXqa3uC+LAMcOcx1EyTCcHsSHrOVg==
+  version "10.4.0"
+  resolved "https://registry.yarnpkg.com/@nestjs/websockets/-/websockets-10.4.0.tgz#696eed92affac5d9f7163a71147f79f0fee5b85e"
+  integrity sha512-h10e/phojBBCvG143kWSdmkMSRN6vLJbsFaO2KkgotWLla9NUMSadSObpY8BjDaRWvaM3sk1RMjD9rwbRIEUcw==
   dependencies:
     iterare "1.2.1"
     object-hash "3.0.0"
-    tslib "2.6.2"
+    tslib "2.6.3"
 
 "@nodelib/fs.scandir@2.1.5":
   version "2.1.5"
