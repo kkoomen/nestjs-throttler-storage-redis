@@ -8,7 +8,8 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
   scriptSrc: string;
   redis: Redis | Cluster;
   disconnectRequired?: boolean;
-
+  private keySeparator: string = '-';
+  
   constructor(redis?: Redis);
   constructor(cluster?: Cluster);
   constructor(options?: RedisOptions);
@@ -130,7 +131,11 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       timeToBlockExpire: Math.ceil(timeToBlockExpire / 1000),
     };
   }
-
+  
+  setKeySeparator(separator: string) {
+     this.keySeparator = separator;
+  }
+  
   onModuleDestroy() {
     if (this.disconnectRequired) {
       this.redis?.disconnect(false);
