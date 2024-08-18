@@ -8,7 +8,7 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
   scriptSrc: string;
   redis: Redis | Cluster;
   disconnectRequired?: boolean;
-  private keySeparator: string = '-';
+  private keySeparator: string = ':';
   
   constructor(redis?: Redis);
   constructor(cluster?: Cluster);
@@ -87,8 +87,8 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
         hitKey += this.keySeparator;
         blockKey += this.keySeparator;
     }
-    hitKey += `${key}:${throttlerName}:hits`;
-    blockKey += `${key}:${throttlerName}:blocked`;
+    hitKey += `${key}${keySeparator}${throttlerName}${keySeparator}hits`;
+    blockKey += `${key}${keySeparator}${throttlerName}${keySeparator}blocked`;
     
     const results: number[] = (await this.redis.call(
       'EVAL',
