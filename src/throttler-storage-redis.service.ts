@@ -78,8 +78,17 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     blockDuration: number,
     throttlerName: string,
   ): Promise<ThrottlerStorageRecord> {
-    const hitKey = `${this.redis.options.keyPrefix}{${key}:${throttlerName}}:hits`;
-    const blockKey = `${this.redis.options.keyPrefix}{${key}:${throttlerName}}:blocked`;
+    
+    let hitKey = this.redis.options.keyPrefix;
+    let blockKey = this.redis.options.keyPrefix;  
+    
+    if (hitKey !== undefined && hitKey !== null && hitKey != ''){
+        hitKey += this.keySeparator;
+        blockKey += this.keySeparator;
+    }
+    hitKey += `${key}:${throttlerName}:hits`;
+    blockKey += `${key}:${throttlerName}:blocked`;
+    
     const results: number[] = (await this.redis.call(
       'EVAL',
       this.scriptSrc,
