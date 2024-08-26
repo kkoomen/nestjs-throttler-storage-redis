@@ -1,4 +1,8 @@
-# NestJS Throttler Redis Storage
+# NestJS Throttler Redis Storage (DEPRECATED)
+
+:warning: **The original package will be further maintained by @jmcdo29, see [here](https://github.com/jmcdo29/nest-lab/tree/main/packages/throttler-storage-redis), as this repository will not be maintained anymore for future development.**
+
+---
 
 ![Tests status](https://img.shields.io/github/actions/workflow/status/kkoomen/nestjs-throttler-storage-redis/tests.yml?label=tests&branch=master)
 [![npm](https://img.shields.io/npm/v/nestjs-throttler-storage-redis)](https://www.npmjs.com/package/nestjs-throttler-storage-redis)
