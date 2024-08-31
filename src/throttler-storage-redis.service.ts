@@ -8,7 +8,8 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
   scriptSrc: string;
   redis: Redis | Cluster;
   disconnectRequired?: boolean;
-
+  private keySeparator: string = ':';
+  
   constructor(redis?: Redis);
   constructor(cluster?: Cluster);
   constructor(options?: RedisOptions);
@@ -78,8 +79,17 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
     blockDuration: number,
     throttlerName: string,
   ): Promise<ThrottlerStorageRecord> {
-    const hitKey = `${this.redis.options.keyPrefix}{${key}:${throttlerName}}:hits`;
-    const blockKey = `${this.redis.options.keyPrefix}{${key}:${throttlerName}}:blocked`;
+    
+    let hitKey = this.redis.options.keyPrefix;
+    let blockKey = this.redis.options.keyPrefix;  
+    
+    if (hitKey !== undefined && hitKey !== null && hitKey != ''){
+        hitKey += this.keySeparator;
+        blockKey += this.keySeparator;
+    }
+    hitKey += `${key}${keySeparator}${throttlerName}${keySeparator}hits`;
+    blockKey += `${key}${keySeparator}${throttlerName}${keySeparator}blocked`;
+    
     const results: number[] = (await this.redis.call(
       'EVAL',
       this.scriptSrc,
@@ -121,7 +131,11 @@ export class ThrottlerStorageRedisService implements ThrottlerStorageRedis, OnMo
       timeToBlockExpire: Math.ceil(timeToBlockExpire / 1000),
     };
   }
-
+  
+  setKeySeparator(separator: string) {
+     this.keySeparator = separator;
+  }
+  
   onModuleDestroy() {
     if (this.disconnectRequired) {
       this.redis?.disconnect(false);
